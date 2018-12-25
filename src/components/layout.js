@@ -1,5 +1,4 @@
 import React from 'react'
-import 'lib-flexible'
 import { StaticQuery } from 'gatsby'
 import layoutStyles from './layout.module.scss'
 export default ({children}) => (
