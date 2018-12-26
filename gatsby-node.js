@@ -1,6 +1,6 @@
 const path = require('path')
 const { createFilePath } = require(`gatsby-source-filesystem`)
-
+// node节点创建
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   console.log(node.internal.type)
@@ -14,7 +14,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
   }
 }
-
+// 页面刚创建
 exports.createPages = ({graphql, actions}) => {
   const { createPage } = actions
   return new Promise((resolve, reject) => {
@@ -42,5 +42,13 @@ exports.createPages = ({graphql, actions}) => {
       })
       resolve()
     })
+  })
+}
+
+exports.onCreateWebpackConfig = ({stage, actions}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"]
+    }
   })
 }

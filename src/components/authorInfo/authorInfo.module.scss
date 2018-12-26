@@ -1,0 +1,18 @@
+.authorInfo{
+  color: #fff;
+  .imgWrapper{
+    width: 128px;
+    height: 128px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.5), 0px 2px 20px 3px rgba(0,0,0,0.25);
+    border-radius: 300px;
+    img{
+      position: absolute;
+      top: -40px;
+    }
+  }
+  .authorName{
+    margin: 20px 0;
+  }
+}

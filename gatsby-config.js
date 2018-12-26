@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: '孟帆的博客',
-    author: 'Francis'
+    author: 'Francis',
+    authorDesc: '前端小白，光吃不做'
   },
   pathPrefix: `/blog`,
   plugins: [
@@ -13,6 +14,12 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography.js`
+      }
+    }
   ]
 }

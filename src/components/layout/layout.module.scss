@@ -1,0 +1,51 @@
+// 字体色
+$baseFontColor: #999 !default;
+$codeBackgroundColor: rgba(32,33,43,0.9);
+$codeColor: #d1d1d2;
+
+// 基本样式设置
+
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/ 
+// ::-webkit-scrollbar-track-piece { //滚动条凹槽的颜色，还可以设置边框属性
+// background-color:#f8f8f8;
+// }
+// ::-webkit-scrollbar {//滚动条的宽度
+// width:9px;
+// height:9px;
+// }
+// ::-webkit-scrollbar-thumb {//滚动条的设置
+// background-color:#dddddd;
+// background-clip:padding-box;
+// min-height:28px;
+// }
+// ::-webkit-scrollbar-thumb:hover {
+// background-color:#bbb;
+// }
+
+// body::-webkit-scrollbar{display:none}
+// body::-webkit-scrollbar{display:none}
+body{
+  background: #3f3f3f;
+  color: #999;
+}
+
+
+.container{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow:hidden;
+  .main{
+    height: 100%;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width:1024px){
+  
+}
+@media screen and (max-width:1024px) {
+  
+}
