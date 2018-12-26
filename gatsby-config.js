@@ -3,6 +3,7 @@ module.exports = {
     title: '孟帆的博客',
     author: 'Francis'
   },
+  pathPrefix: `/blog`,
   plugins: [
     `gatsby-transformer-remark`,
     {
