@@ -24,7 +24,7 @@ export default class Layout extends Component {
         </div>
         <Scrollbars 
         onScroll={this.handleScroll}
-        className={layoutStyles.main} 
+        className="main"
         data-flex="dir:top">
           <ReactCSSTransitionGroup
             transitionEnter={true}
