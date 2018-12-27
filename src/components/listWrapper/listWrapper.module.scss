@@ -1,0 +1,23 @@
+.listWrapper{
+  margin: 30px;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  .listContent{
+    position: relative;
+    border: 1px solid #2f2f2f;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 6px;
+    // height: 900px;
+    -webkit-box-shadow: 4px 4px 18px rgba(0,0,0,0.46);
+    box-shadow: 4px 4px 18px rgba(0,0,0,0.46);
+    ol,p,ul{
+      padding-left: 1em;
+      list-style: none;
+    }
+    ol,ul{
+      margin: 0;
+    }
+  }
+}

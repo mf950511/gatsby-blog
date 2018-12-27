@@ -14,7 +14,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
   }
 }
-// 页面刚创建
+// 创建页面
 exports.createPages = ({graphql, actions}) => {
   const { createPage } = actions
   return new Promise((resolve, reject) => {
@@ -34,7 +34,7 @@ exports.createPages = ({graphql, actions}) => {
       result.data.allMarkdownRemark.edges.forEach(({node}) => {
         createPage({
           path: node.fields.slug,
-          component: path.resolve(`./src/templates/blog-post.js`),
+          component: path.resolve(`./src/templates/blog-small.jsx`),
           context: {
             slug: node.fields.slug
           }

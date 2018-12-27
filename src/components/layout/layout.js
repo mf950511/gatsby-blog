@@ -3,13 +3,17 @@ import NavLeft from 'components/navLeft/navLeft'
 import NavTop from 'components/navTop/navTop'
 import { Scrollbars } from 'react-custom-scrollbars';
 import layoutStyles from './layout.module.scss'
+import './global.scss'
 import 'flex.css/dist/data-flex.css'
+import "animate.css"
+import ReactCSSTransitionGroup from "react-addons-css-transition-group"
 export default class Layout extends Component {
   constructor(props){
     super(props)
     this.handleScroll = this.handleScroll.bind(this)
   }
   componentDidMount(){
+    
   }
   render(){
     const { children } = this.props
@@ -19,20 +23,29 @@ export default class Layout extends Component {
           <NavLeft></NavLeft>
         </div>
         <Scrollbars 
-        id="container"
         onScroll={this.handleScroll}
         className={layoutStyles.main} 
         data-flex="dir:top">
-          <div>
-            <NavTop></NavTop>
-          </div>
-          {children}
+          <ReactCSSTransitionGroup
+            transitionEnter={true}
+            transitionLeave={true}
+            transitionEnterTimeout={2500}
+            transitionLeaveTimeout={1500}
+            transitionName="animated"
+          >
+            <div key="amache" className="navTop animated pulse">
+              <div id="navTop">
+                <NavTop></NavTop>
+              </div>
+            </div>
+          </ReactCSSTransitionGroup>
           
+          {children}
         </Scrollbars>
       </div>
     )
   }
   handleScroll(event){
-    console.log(event)
+    this.props.handleScroll(event)
   }
 }

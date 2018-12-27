@@ -9,6 +9,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
+    "animate.css": "^3.7.0",
     "flex.css": "^1.1.7",
     "gatsby": "^2.0.33",
     "gatsby-link": "^2.0.7",
@@ -21,10 +22,12 @@
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "react": "^16.5.1",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.5.1",
     "react-typography": "^0.16.18",
     "typography": "^0.16.18",
+    "typography-plugin-code": "^0.16.18",
     "typography-theme-alton": "^0.16.18"
   }
 }

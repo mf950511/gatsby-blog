@@ -5,6 +5,7 @@
   background: url('./bg2.jpg') no-repeat no-repeat center center;
   background-size: cover;
   position: relative;
+  z-index: 0;
   .overlay{
     width: 100%;
     height: 100%;
