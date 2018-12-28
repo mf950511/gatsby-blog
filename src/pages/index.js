@@ -1,8 +1,8 @@
 import React from "react"
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 // import BolgNav from '../components/blogNav/blogNav'
-import ListWrapper from 'components/listWrapper/listWrapper'
+import BlogList from 'components/blogList/blogList'
 export default class Index extends React.Component {
   constructor(props){
     super(props)
@@ -65,16 +65,8 @@ export default class Index extends React.Component {
     return (
       <Layout handleScroll={this.handleScroll.bind(this)}>
         <div ref="listWrapper">
-          {
-            edges.map(({node, flag}, index)=>(
-              <ListWrapper key={index} flag={flag}>
-                <Link to={node.fields.slug}><h1 className="article-title">{node.frontmatter.title}</h1></Link>
-                <div className="article-entry" dangerouslySetInnerHTML={{__html: node.html}}></div>
-              </ListWrapper>
-            ))
-          }
+          <BlogList edges={edges}></BlogList>
         </div>
-        
       </Layout>
     )
   }

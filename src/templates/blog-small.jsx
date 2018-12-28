@@ -5,7 +5,9 @@ import ListWrapper from 'components/listWrapper/listWrapper'
 
 export default ({data})=>(
   <Layout>
-    <ListWrapper>{data.markdownRemark.html}</ListWrapper>
+    <ListWrapper>
+      <div dangerouslySetInnerHTML={{__html:data.markdownRemark.html}}></div>
+    </ListWrapper>
   </Layout>
 )
 

@@ -3,7 +3,7 @@ import NavLeft from 'components/navLeft/navLeft'
 import NavTop from 'components/navTop/navTop'
 import { Scrollbars } from 'react-custom-scrollbars';
 import layoutStyles from './layout.module.scss'
-import './global.scss'
+import 'common/css/global.scss'
 import 'flex.css/dist/data-flex.css'
 import "animate.css"
 import ReactCSSTransitionGroup from "react-addons-css-transition-group"
@@ -46,6 +46,8 @@ export default class Layout extends Component {
     )
   }
   handleScroll(event){
-    this.props.handleScroll(event)
+    if(this.props.handleScroll) {
+      this.props.handleScroll(event)
+    }
   }
 }

@@ -13,11 +13,24 @@
     -webkit-box-shadow: 4px 4px 18px rgba(0,0,0,0.46);
     box-shadow: 4px 4px 18px rgba(0,0,0,0.46);
     ol,p,ul{
-      padding-left: 1em;
       list-style: none;
     }
     ol,ul{
       margin: 0;
+    }
+  }
+}
+@media screen and (min-width:800px) {
+  .listContent{
+    ol,p,ul{
+      padding-left: 1rem;
+    }
+  }
+}
+@media screen and (max-width:800px) {
+  .listContent{
+    ol,p,ul{
+      padding-left: 0;
     }
   }
 }
