@@ -8,55 +8,27 @@ export default class Index extends React.Component {
     super(props)
     this.state = {
       edges: props.data.allMarkdownRemark.edges,
-      count: props.data.allMarkdownRemark.totalCount,
-      index: 0
+      count: props.data.allMarkdownRemark.totalCount
     }
   }
   componentDidMount(){
-    console.log(document.getElementById('navTop').getBoundingClientRect())
-    const edges = this.state.edges.map((item, index) => {
-      if(index !== 0) {
-        item.flag = false
-      }
-      return item
-    })
-    this.setState({
-      edges,
-      index: 1
-    })
-    setTimeout(()=>{
-      this.initList(0)
-    }, 20)
+    this.initList(0)
   }
   // 监听页面初始化数据与滚动事件数据
   initList(top){
     let windowHeight = window.innerHeight
-    let mobileNavHeight = document.getElementById('navTop').getBoundingClientRect().height
-    let listHeight = this.refs.listWrapper.getBoundingClientRect().height
-    let animateIndex = this.state.index
-    let scrollLine = top + windowHeight
-    if(listHeight + mobileNavHeight <= windowHeight) {
-      scrollLine = windowHeight
-    } else {
-      scrollLine = top + windowHeight
-    }
-    if(mobileNavHeight+listHeight <= scrollLine) {
-      let edges = this.state.edges.map((item, index) => {
-        if(index === animateIndex) {
-          item.flag = true
-        } else if(index > animateIndex) {
-          item.flag = false
-        }
-        return item
-      })
-      this.setState({
-        edges,
-        index: (this.state.index+1)
-      })
-    }
-    if(listHeight <= windowHeight - mobileNavHeight) {
-      this.initList(0)
-    }
+    let animate = document.querySelectorAll('.blogList')
+    let scrollLine = top + windowHeight - 100
+    let edges = this.state.edges.map((item, index) => {
+      let pos = animate[index].getBoundingClientRect().top
+      if(pos <= scrollLine) {
+        item.flag = true
+      }
+      return item
+    })
+    this.setState({
+      edges
+    })
     
   }
   render (){
@@ -64,7 +36,7 @@ export default class Index extends React.Component {
     const edges = this.state.edges
     return (
       <Layout handleScroll={this.handleScroll.bind(this)}>
-        <div ref="listWrapper">
+        <div>
           <BlogList edges={edges}></BlogList>
         </div>
       </Layout>
@@ -73,8 +45,6 @@ export default class Index extends React.Component {
   handleScroll(event){
     const ele = event.target
     this.initList(ele.scrollTop)
-    // console.log(this.refs.listWrapper.getBoundingClientRect())
-    // console.log(ele.scrollTop)
   }
 }
 

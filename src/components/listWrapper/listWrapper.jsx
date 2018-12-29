@@ -3,9 +3,9 @@ import "animate.css"
 import ReactCSSTransitionGroup from "react-addons-css-transition-group"
 import listWrapperStyles from './listWrapper.module.scss'
 export default ({children, title, flag}) => {
-  if(flag === false) {
-    return null
-  }
+  // if(flag === false) {
+  //   return null
+  // }
   return (
     <ReactCSSTransitionGroup
       transitionEnter={true}
@@ -14,7 +14,7 @@ export default ({children, title, flag}) => {
       transitionLeaveTimeout={1500}
       transitionName="animated"
     >
-      <div key="amache" className="animated bounceInRight">
+      <div key="amache" className={`blogList animated ${flag ? 'bounceInRight' : listWrapperStyles.hide}`}>
         <article className={listWrapperStyles.listWrapper}>
           <div className={listWrapperStyles.listContent}>
             <div>{title}</div>

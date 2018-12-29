@@ -6,7 +6,7 @@ export default ({edges})=> (
     {
       edges.map(({node, flag}, index)=>(
         <ListWrapper key={index} flag={flag}>
-          <Link to={node.fields.slug}><h1 className="article-title">{node.frontmatter.title}</h1></Link>
+          <Link to={`/blog/${node.fields.slug}`}><h1 className="article-title">{node.frontmatter.title}</h1></Link>
           <div className="article-entry" dangerouslySetInnerHTML={{__html: node.html.split('<!--more-->')[0]}}></div>
         </ListWrapper>
       ))
