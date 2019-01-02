@@ -52,13 +52,11 @@ export default class Index extends React.Component {
 }
 
 export const query = graphql`
-  query($skip: Int!, $limit:Int!) {
+  query {
     allMarkdownRemark(
-      limit: $limit
       filter: {
         frontmatter: {date: {ne: null}}
       }
-      skip: $skip
       sort: {fields: [frontmatter___date],order:ASC}
     ){
       totalCount
