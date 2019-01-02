@@ -19,7 +19,7 @@ export default ({tagList})=> (
                     <header className="archive-article-header">
                       <div className="archive-title-wrap" data-flex="main:justify box:last">
                         <div className="archive-title">
-                          <Link to="/">{item.title}</Link>
+                          <Link to={`/blog${item.slug}`}>{item.title}</Link>
                         </div>
                         <time>{item.time}</time>
                       </div>

@@ -8,12 +8,12 @@ export default class TagInfo extends React.Component{
     return (
       <div className={tagInfoStyles.tagInfoWrap}>
         <div className={tagInfoStyles.tagClassify}>
-          <Link to="/">{category}</Link>
+          <Link to={`/category/${category}`}>{category}</Link>
         </div>
         <div className={tagInfoStyles.tagList} data-flex="main:left">
           {
             tags.map((item, index) => (
-              <div key={index} className={tagInfoStyles.tag}><Link to="/">{item}</Link></div>
+              <div key={index} className={tagInfoStyles.tag}><Link to={`/tag/${item}`}>{item}</Link></div>
             ))
           }
         </div>

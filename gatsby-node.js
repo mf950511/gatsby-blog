@@ -26,6 +26,10 @@ exports.createPages = ({graphql, actions}) => {
               fields {
                 slug
               }
+              frontmatter {
+                tags
+                categories
+              }
             }
           }
         }
@@ -37,6 +41,24 @@ exports.createPages = ({graphql, actions}) => {
           component: path.resolve(`./src/templates/blog-small.jsx`),
           context: {
             slug: node.fields.slug
+          }
+        })
+        let tags = []
+        tags = tags.concat(node.frontmatter.tags)
+        tags.forEach(tag => {
+          createPage({
+            path: `tag/${tag}`,
+            component: path.resolve(`./src/templates/tag.jsx`),
+            context: {
+              tag
+            }
+          })
+        })
+        createPage({
+          path: `category/${node.frontmatter.categories}`,
+          component: path.resolve(`./src/templates/category.jsx`),
+          context: {
+            categories: node.frontmatter.categories
           }
         })
       })

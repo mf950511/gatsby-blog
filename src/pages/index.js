@@ -66,6 +66,8 @@ export const query = graphql`
           }
           frontmatter {
             title
+            tags
+            categories
           }
         }
       }

@@ -24,6 +24,7 @@ export default class Tag extends React.Component{
       tag.time = date[1]
       tag.tags = item.frontmatter.tags
       tag.categories = item.frontmatter.categories
+      tag.slug = item.fields.slug
       if(obj[year]) {
         obj[year].push(tag)
       } else {
@@ -46,11 +47,11 @@ export default class Tag extends React.Component{
 }
 
 export const query = graphql`
-  query {
+  query($categories: String) {
     allMarkdownRemark(
       limit: 10,
       filter: {
-        frontmatter: {date: {ne: null}}
+        frontmatter: {categories: {eq: $categories}}
       }
       sort: {fields: [frontmatter___date],order: DESC}
     ){
