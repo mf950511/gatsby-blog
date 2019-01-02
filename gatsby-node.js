@@ -36,6 +36,19 @@ exports.createPages = ({graphql, actions}) => {
       }
     `).then(result => {
       result.data.allMarkdownRemark.edges.forEach(({node}) => {
+        const posts = result.data.allMarkdownRemark.edges
+        const postsPerPage = 10
+        const numPages = Math.ceil(posts.length / postsPerPage)
+        Array.from({ length: numPages }).forEach((_, i) => {
+          createPage({
+            path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+            component: path.resolve("./src/templates/index.jsx"),
+            context: {
+              limit: postsPerPage,
+              skip: i * postsPerPage,
+            },
+          })
+        })
         createPage({
           path: `blog${node.fields.slug}`,
           component: path.resolve(`./src/templates/blog-small.jsx`),

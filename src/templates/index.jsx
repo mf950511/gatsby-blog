@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from 'gatsby'
-import Layout from 'components/layout/layout'
+import Layout from '../components/layout/layout'
 // import BolgNav from '../components/blogNav/blogNav'
 import BlogList from 'components/blogList/blogList'
 import Paganation from 'components/paganation/paganation'
@@ -13,6 +13,14 @@ export default class Index extends React.Component {
     }
   }
   componentDidMount(){
+    let locationArr = window.location.href.split('/')
+    console.log(locationArr)
+    let currentIndex = locationArr[locationArr.length - 1]
+    currentIndex = currentIndex === '' ? 0 : parseInt(currentIndex - 1)
+    console.log(currentIndex)
+    this.setState({
+      currentIndex
+    })
     this.initList(0)
   }
   // 监听页面初始化数据与滚动事件数据
@@ -34,13 +42,14 @@ export default class Index extends React.Component {
   }
   render (){
     const totalCount = this.state.count
-    console.log(totalCount)
     const edges = this.state.edges
+    console.log(this.props.data)
+    const currentIndex = this.state.currentIndex
     return (
       <Layout handleScroll={this.handleScroll.bind(this)}>
         <div>
           <BlogList edges={edges}></BlogList>
-          <Paganation limit={1} count={totalCount} currentIndex={0} baseUrl="/blog/"></Paganation>
+          <Paganation limit={10} count={totalCount} currentIndex={currentIndex} baseUrl="/blog/"></Paganation>
         </div>
       </Layout>
     )
