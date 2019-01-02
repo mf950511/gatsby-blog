@@ -7,20 +7,15 @@ import Paganation from 'components/paganation/paganation'
 export default class Index extends React.Component {
   constructor(props){
     super(props)
+    console.log(props)
     this.state = {
       edges: props.data.allMarkdownRemark.edges,
-      count: props.data.allMarkdownRemark.totalCount
+      count: props.data.allMarkdownRemark.totalCount,
+      limit: props.pageContext.limit,
+      currentIndex: props.pageContext.currentIndex
     }
   }
   componentDidMount(){
-    let locationArr = window.location.href.split('/')
-    console.log(locationArr)
-    let currentIndex = locationArr[locationArr.length - 1]
-    currentIndex = currentIndex === '' ? 0 : parseInt(currentIndex - 1)
-    console.log(currentIndex)
-    this.setState({
-      currentIndex
-    })
     this.initList(0)
   }
   // 监听页面初始化数据与滚动事件数据
@@ -43,13 +38,14 @@ export default class Index extends React.Component {
   render (){
     const totalCount = this.state.count
     const edges = this.state.edges
-    console.log(this.props.data)
     const currentIndex = this.state.currentIndex
+    const limit = this.state.limit
+    console.log(totalCount, currentIndex, limit)
     return (
       <Layout handleScroll={this.handleScroll.bind(this)}>
         <div>
           <BlogList edges={edges}></BlogList>
-          <Paganation limit={10} count={totalCount} currentIndex={currentIndex} baseUrl="/blog/"></Paganation>
+          <Paganation limit={limit} count={totalCount} currentIndex={currentIndex} baseUrl="/blog/"></Paganation>
         </div>
       </Layout>
     )
