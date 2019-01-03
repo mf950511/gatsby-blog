@@ -9,15 +9,18 @@ export default class Paganation extends React.Component {
     let baseUrl = this.props.baseUrl
     let numPage = Math.ceil(count/limit)
     console.log(baseUrl)
+    if(numPage === 1) {
+      return null
+    }
     return (
       <div className={PaganationStyles.paganation}>
-        <Link className={`${PaganationStyles.extend} ${currentIndex}`} to={`${baseUrl}${currentIndex - 1}`}>« Prev</Link>
+        <Link className={`${currentIndex === 0 ? PaganationStyles.hide : PaganationStyles.extend}`} to={`${baseUrl}${currentIndex - 1}`}>« Prev</Link>
         {
           Array.from({length: numPage}).map((item, index) => {
             return <Link to={`${baseUrl}${index === 0 ? '' : (index+1)}`} className={`${PaganationStyles.pageNumber} ${currentIndex === index ? PaganationStyles.current : ''}`} key={index}>{index+1}</Link>
           })
         }
-        <Link className={PaganationStyles.extend} to={`${baseUrl}${currentIndex + 1}`}>Next »</Link>
+        <Link className={`${currentIndex < numPage - 1 ? PaganationStyles.extend : PaganationStyles.hide}`} to={`${baseUrl}${currentIndex + 1}`}>Next »</Link>
       </div>
     )
   }

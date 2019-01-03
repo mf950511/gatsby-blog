@@ -40,7 +40,7 @@ export default class Index extends React.Component {
       <Layout handleScroll={this.handleScroll.bind(this)}>
         <div>
           <BlogList edges={edges}></BlogList>
-          <Paganation limit={1} count={totalCount} currentIndex={0} baseUrl="/blog/"></Paganation>
+          <Paganation limit={10} count={totalCount} currentIndex={0} baseUrl="/blog/"></Paganation>
         </div>
       </Layout>
     )
