@@ -86,4 +86,14 @@ typeof function(){} === 'function' // true
 - 检测是否是NaN `Number.isNaN()`
 - 检测两个值是否绝对相等 `Object.is(a, b)`
 
+## 奇特的小技巧
+- ~运算符可将结果强制类型转换为真值/假值
+```js
+    var a = "Hello world"
+    if(~a.indexOf('lo')) { // true
+      // 找到匹配
+    }
+    // 相应的 !~a.indexOf('lo')为未找到匹配
+```
+
 
