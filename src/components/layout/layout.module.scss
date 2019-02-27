@@ -1,18 +1,9 @@
 .container{
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  overflow:hidden;
-  background: rgb(63,63,63);
-  // .nav{
-  //   -webkit-transition: all 0.2s ease-in;
-  //   -moz-transition: all 0.2s ease-in;
-  //   -ms-transition: all 0.2s ease-in;
-  //   transition: all 0.2s ease-in;
-  //   overflow:hidden;
-  // }
+  .nav{
+    position: fixed;
+    height: 100%;
+    width: 300px;
+  }
 }
 @media screen and (min-width:800px){
   .container .nav{

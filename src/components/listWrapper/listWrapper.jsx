@@ -1,33 +1,30 @@
 import React from 'react'
-import "animate.css"
-import ReactCSSTransitionGroup from "react-addons-css-transition-group"
 import listWrapperStyles from './listWrapper.module.scss'
+import sr from 'components/ScrollReveal/ScrollReveal'
 export default class ListWrapper extends React.Component{
+  componentDidMount(){
+    var slideRight = {
+      distance: '150%',
+      origin: 'right',
+      opacity: null
+    };
+
+    sr.reveal(this.refs.blogList, slideRight)
+  }
   render(){
-    const {children, title, flag} = this.props
-    // const animateArr = ['bounceInRight','fadeInRightBig','rotateInDownRight','slideInRight','zoomInRight','zoomInLeft']
-    // bounceInRight fadeInRightBig rotateInDownRight slideInRight zoomInRight zoomInLeft
-    // const animateIndex = parseInt(Math.random() * 6)
-    // const animate = animateArr[animateIndex]
-    const animate = 'rotateInDownRight'
+    const {children, title} = this.props
     return (
-      <ReactCSSTransitionGroup
-        transitionEnter={true}
-        transitionLeave={true}
-        transitionEnterTimeout={2500}
-        transitionLeaveTimeout={1500}
-        transitionName="animated"
-      >
-        <div key="amache" className={`blogList animated ${flag ? animate : listWrapperStyles.hide}`}>
-          <article className={listWrapperStyles.listWrapper}>
-            <div className={listWrapperStyles.listContent}>
-              <div>{title}</div>
-              {children}
-            </div>
-          </article>
+      
+      <div key="amache" className="blogList" ref="blogList">
+          <span>
+            <article className={listWrapperStyles.listWrapper}>
+              <div className={listWrapperStyles.listContent}>
+                <div>{title}</div>
+                {children}
+              </div>
+            </article>
+          </span>
         </div>
-      </ReactCSSTransitionGroup>
-    
     )
   }
 }

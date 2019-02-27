@@ -2,8 +2,11 @@
 @import url(./tag.scss);
 // 全局样式
 .main{
-  height: 100%;
-  overflow: hidden;
+  min-height: 100%;
+  position: absolute;
+  background: rgb(63,63,63);
+  right: 0;
+  overflow-x: hidden;
   &>div{
     &::-webkit-scrollbar {/*滚动条整体样式*/
         width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
@@ -25,10 +28,16 @@
   .navTop{
     display: none;
   }
+  .main{
+    left: 300px;
+  }
 }
 @media screen and (max-width:800px) {
   .navTop{
     display: block;
+  }
+  .main{
+    left: 0;
   }
 }
 @font-face {

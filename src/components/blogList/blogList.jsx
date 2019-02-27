@@ -5,8 +5,8 @@ import TagInfo from 'components/tagList/tagInfo'
 export default ({edges})=> (
   <div>
     {
-      edges.map(({node, flag}, index)=>(
-        <ListWrapper key={index} flag={flag}>
+      edges.map(({node}, index)=>(
+        <ListWrapper key={index}>
           <Link to={`/blog${node.fields.slug}`}><h1 className="article-title left">{node.frontmatter.title}</h1></Link>
           <div className="article-entry" dangerouslySetInnerHTML={{__html: node.html.split('<!--more-->')[0]}}></div>
           <div className="article-entry-bottom" data-flex="box:last">

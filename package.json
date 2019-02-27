@@ -26,6 +26,7 @@
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.5.1",
     "react-typography": "^0.16.18",
+    "scrollreveal": "^4.0.5",
     "typography": "^0.16.18",
     "typography-plugin-code": "^0.16.18",
     "typography-theme-alton": "^0.16.18"
