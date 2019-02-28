@@ -4,15 +4,17 @@ import NavTop from 'components/navTop/navTop'
 import layoutStyles from './layout.module.scss'
 import 'common/css/global.scss'
 import 'flex.css/dist/data-flex.css'
-import sr from 'components/ScrollReveal/ScrollReveal'
+ 
 export default class Layout extends Component {
   componentDidMount(){
+    const ScrollReveal = require('scrollreveal').default
+
     var slideRight = {
       distance: '150%',
       origin: 'right',
       opacity: null
     };
-    sr.reveal(this.refs.navTop, slideRight)
+    ScrollReveal().reveal(this.refs.navTop, slideRight)
   }
   render(){
     const { children } = this.props

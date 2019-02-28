@@ -81,10 +81,24 @@ exports.createPages = ({graphql, actions}) => {
   })
 }
 
-exports.onCreateWebpackConfig = ({stage, actions}) => {
+exports.onCreateWebpackConfig = ({stage,loaders, actions}) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, "src"), "node_modules"]
     }
   })
+  console.log(stage)
+  if (stage === "build-html") {
+    console.log('我进来了')
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /bad-module/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
 }

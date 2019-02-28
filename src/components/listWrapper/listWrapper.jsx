@@ -1,15 +1,15 @@
 import React from 'react'
 import listWrapperStyles from './listWrapper.module.scss'
-import sr from 'components/ScrollReveal/ScrollReveal'
 export default class ListWrapper extends React.Component{
   componentDidMount(){
+    const ScrollReveal = require('scrollreveal').default
     var slideRight = {
       distance: '150%',
       origin: 'right',
       opacity: null
     };
 
-    sr.reveal(this.refs.blogList, slideRight)
+    ScrollReveal().reveal(this.refs.blogList, slideRight)
   }
   render(){
     const {children, title} = this.props
