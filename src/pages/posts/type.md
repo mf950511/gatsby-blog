@@ -1,8 +1,8 @@
 ---
 title: 你不知道的javascript-类型
 date: 2019-01-03
-tags: [javascript, 入门]
-categories: JavasSript
+tags: [JavaScript, 入门]
+categories: JavaScript
 ---
 
 # 类型

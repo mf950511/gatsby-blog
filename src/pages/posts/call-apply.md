@@ -1,10 +1,10 @@
 ---
 title: "javascript回顾"
-date: "2019-2-27"
+date: 2019-02-27
 name: 'francis'
 age: '24'
-tags: [JavaScript,回顾,入门]
-categories: JavasSript
+tags: [JavaScript回顾,回顾,入门]
+categories: JavaScript
 ---
 
 # call,apply,bind详解

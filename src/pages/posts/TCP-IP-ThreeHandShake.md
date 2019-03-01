@@ -1,6 +1,6 @@
 ---
 title: "HTTP与TCP/IP了解"
-date: "2019-02-26"
+date: 2019-02-26
 name: 'francis'
 age: '24'
 tags: [HTTP,TCP/IP]
