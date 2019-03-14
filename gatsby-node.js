@@ -1,5 +1,6 @@
 const path = require('path')
 const { createFilePath } = require(`gatsby-source-filesystem`)
+
 // node节点创建
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions

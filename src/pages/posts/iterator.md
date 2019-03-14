@@ -3,7 +3,7 @@ title: 'ES2015迭代器'
 date: 2019-03-12
 name: 'Francis'
 tags: [JavaScript, ES2015, 进修]
-category: JavaScript
+categories: JavaScript
 ---
 
 # 一脸懵逼的迭代器
@@ -22,6 +22,7 @@ category: JavaScript
 ## 数组
 
 - `数组`中的迭代器
+
 ```js
   let arr = [1,2,3]
   let it = arr[Symbol.iterator]()
@@ -30,12 +31,14 @@ category: JavaScript
   it.next() // { value: 3, done: false }
   it.next() // { value: undefined, done: true }
 ```
+
 - 每次在数祖上调用`Symbol.iterator`方法时都会产生一个新的迭代器
 - 当数组迭代完成并不会立即将`done`设置为`true`,而是在迭代完所有之后再迭代一次才会将其改变
 
 ## 字符串
 
 - `字符串`中的迭代器
+
 ```js
   let str = 'hello'
   let it = arr[Symbol.iterator]()
@@ -46,6 +49,7 @@ category: JavaScript
   console.log(it.next()) // { value: 'o', done: false }
   console.log(it.next()) // { value: undefined, done: true }
 ```
+
 - 严格来说`字符串`本身并不是`iterator`,但是这里被强制转换为`String对象`封装形式，从而变成一个`iterator`
 
 ## map
@@ -73,6 +77,7 @@ category: JavaScript
 ## for...of循环迭代器
 
 - `for...of`可用于消耗迭代器，也就是`循环调用迭代器`，形式如下
+
 ```js
   let map = new Map()
   map.set({name: '张三'}, {age: 24})
@@ -82,12 +87,14 @@ category: JavaScript
   }
   // [ { name: '张三' }, { age: 24 } ], [ 'foo', 42 ]
 ```
+
 - `for...of`会将迭代器中的内容返回
 
 # 自定义迭代器
 
 - 利用`Symbol.itertor`我们可以构造可以与`ES6`交互的属于自己的`迭代器`
 - 下面是构造一个`无限斐波纳契序列`
+
 ```js
   var Fib = {
     [Symbol.iterator](){
@@ -115,6 +122,7 @@ category: JavaScript
   }
   // 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610
 ```
+
 - 这里当我们调用`Fib`的`Symbol.iterator`方法会返回一个带有`next`跟`return`方法的迭代器
 - 通过闭包里面的`n1`与`n2`来维护数据
 
@@ -122,6 +130,7 @@ category: JavaScript
 
 ## 模拟事件队列机制
 - 下面实现一个`运行一系列事件`的迭代器
+
 ```js
   let tasks = {
     [Symbol.iterator](){
@@ -157,11 +166,13 @@ category: JavaScript
   console.log(it.next(10, 20, 30)) //{ value: 230, done: false }
   console.log(it.next()) //{ done: true }
 ```
+
 - 其中可以看到，我们将要运行的事件都传入我们的`数组集合options`中，然后便可以迭代运行了
 
 ## 模拟数字生成数组
 
 - 我们可以将数字构造为一个迭代器，使其拥有迭代器的一些操作，用来`生成数组`或`一定次数的循环`
+
 ```js
   if(!Number.prototype[Symbol.iterator]){
     Object.defineProperty(
@@ -203,6 +214,7 @@ category: JavaScript
 
   [...3] // [0,1,2,3]
 ```
+
 - 第一个`for...of`循环可以使我们循环指定次数来完成我们的操作
 - 因为我们`ES6`的`解构符`本来就可以`消耗`或者说是`解读`我们的迭代器，所以会帮助我们直接生成指定长度的纯数字数组
 

@@ -18,6 +18,7 @@
     "gatsby-react-router-scroll": "^2.0.2",
     "gatsby-source-filesystem": "^2.0.12",
     "gatsby-transformer-remark": "^2.1.17",
+    "highlight.js": "^9.15.6",
     "lib-flexible": "^0.3.2",
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",

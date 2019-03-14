@@ -3,7 +3,7 @@ title: 'ES2016字符串模板'
 date: 2019-03-11
 name: 'Francis'
 tags: [JavaScript, ES2015, 进修]
-category: JavaScript
+categories: JavaScript
 ---
 
 # 深入字符串模板
@@ -20,6 +20,7 @@ category: JavaScript
 # 常用形式
 
 ## 插入表达式
+
 ```js
   function upper(s) {
     return s.toUpperCase()
@@ -47,6 +48,7 @@ category: JavaScript
 
 # 高级用法
 ## 标签模板字面量
+
 - 其实在`你不知道的JavaScript`中将`字符串模板`称为`标签字符串字面量`
 - 看一下下面比较酷炫的用法
 
@@ -61,6 +63,7 @@ category: JavaScript
   // strings [ 'Everything is ', '!' ]   
   // values  [ 'awesome' ]
 ```
+
 - 看到这里可能都有点懵，这还是函数吗？又没有函数调用的小括号
 - 本质上说这是一类不需要`()`的函数调用，`字符串字面量`之前是一个要调用的函数
 - 那二者组合的`字符串字面量作为标签调用的函数`会变成什么？参数又是什么含义？
@@ -68,6 +71,7 @@ category: JavaScript
 - 第二个参数`values`则是使用了`...gather/rest`运算符将其他的所有参数收集到了名为`values`的数组中，所以这里只能是`'awesome'`
 
 ## 数字格式化为美元表示
+
 ```js
   function dollabillsyall(strings, ...values) {
     return strings.reduce(function (s, v, idx){
