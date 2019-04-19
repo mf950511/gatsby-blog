@@ -17,7 +17,7 @@ export default class ListWrapper extends React.Component{
       
       <div key="amache" className="blogList" ref="blogList">
           <span>
-            <article className={listWrapperStyles.listWrapper}>
+          <article className={`borderMore ${listWrapperStyles.listWrapper}`}>
               <div className={listWrapperStyles.listContent}>
                 <div>{title}</div>
                 {children}
