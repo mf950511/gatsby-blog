@@ -56,7 +56,7 @@ dispatch({ type: DECREMENT, payload: number })
 ## react中使用redux
 
 - react hooks出来之前，redux几乎是所有react项目的不二只选，但是其复杂的使用方式让许多开发者都头疼，对萌新来说更是要命，上网查了都不知道是怎么回事
-- hooks的出现，解放了一大批的react的开发者，易上手的开发模式让人开心，而react-redux自然也不会放过hooks的这波狂潮，下面就让我们对比一下hooks前后的两种redux使用形式
+- hooks的出现，解放了一大批的react的开发者，易上手的开发模式让开发者使用极其简单，而react-redux自然也不会放过hooks的这波狂潮，下面就让我们对比一下hooks前后的两种redux使用形式
 
 ### react中使用redux
 
@@ -100,3 +100,28 @@ export default connect(mapStateToProps, mapDispatchToProps)(Test)
 
 ```
 
+## react hooks中使用redux
+
+- hooks中使用redux需要依靠react-redux提供的 useSelector 与 useDispatch进行state取值与dispatch执行修改操作
+- useSelector会根据接受的函数返回需要的状态值，如下面的number
+- useDispatch会返回一个操作函数，返回的操作函数可以接收一个action执行状态值的修改
+
+```js
+import * as React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+
+const Test = () => {
+  const number = useSelector(state => state.number)
+  const dispatch = useDispatch()
+  return (
+      <div>
+        <div>{ this.props.number }</div>
+        <button onClick={() => { dispatch({ type: 'INCREMENT', payload: 10 }) }}>增加10</button>
+        <button onClick={() => { dispatch({ type: 'DECREMMENT', payload: 5 }) }}>减少5</button>
+      </div>
+    )
+}
+
+export default Test
+
+``` 
