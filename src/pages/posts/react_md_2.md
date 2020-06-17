@@ -814,6 +814,7 @@ module.exports = {
 ```
 
 - 如上就完成了咱们项目的前期配置，单纯使用react已经没有什么问题了，这一章的配置就到这吧，下面把各个配置文件都贴一下，当然也可以选择源码查看，地址是 [react-admin](https://github.com/mf950511/react-admin)
+- 下一章我们进行typeScript的配置，之后就开始正式进行项目开发
 
 ```js
 // webpack.common.js
