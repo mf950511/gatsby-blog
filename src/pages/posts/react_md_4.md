@@ -63,3 +63,51 @@ setTimeout(() =>{
 ```
 
 - 这样就可以实现在其他工具页面进行页面跳转了
+
+## ant4使用icon与动态渲染问题
+
+- ant4中icon的引用方式发生了变化，需要我们单独引入 @ant-design/icons 包，然后获取Icon名以组件的形式进行引入，这样就存在了一个问题，如何动态的引入icon，比如在后台配置icon名称，在前端进行对应的展示，如首页菜单栏，权限不一，展现不一致
+- 这种情况我们就只能全量引入icon，如下
+  
+```js
+import * as Icons from '@ant-design/icons';
+```
+
+- 然后再指定返回reactNode的方法
+
+```js
+interface Icons { // 处理icon的类型
+  [PropName: string]: any
+}
+const getIcons = (str: string, Icons: Icons) => {
+  const TestBankOutlined = Icons[str]
+  return <TestBankOutlined />
+}
+```
+
+- 之后就是我们的菜单渲染函数
+
+```js
+interface SideBar{ // 菜单栏
+  name: string;
+  children?: Array<SideBar>,
+  [propName: string]: any;
+}
+const sideBarTree = (menuArr: SideBar[]) => {
+  if(menuArr && menuArr.length) {
+    return menuArr.map((item, index) => {
+      return (
+        item.children 
+        ? 
+        <SubMenu className="home-menu" popupClassName="home-sider" key={ item.path } icon={ item.icon ? getIcons(item.icon, Icons) : '' } title={ item.name }>
+          { sideBarTree(item.children) }
+        </SubMenu> : <Menu.Item className="home-menu-item" icon={ item.icon ? getIcons(item.icon, Icons) : '' } key={ item.path }>{ item.name }</Menu.Item>
+      )
+    })
+  } else {
+    return null
+  }
+}
+```
+
+- 这样就完成了我们菜单与icon的可配置化
