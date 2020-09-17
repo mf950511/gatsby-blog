@@ -1,6 +1,6 @@
 ---
 title: "JavaScript中实现数据结构栈"
-date: 2019-12-25
+date: "2019-12-25"
 name: 'francis'
 age: '24'
 tags: [JavaScript回顾,数据结构,进修]
@@ -19,6 +19,8 @@ function Stack(){
   this.dataStore = []
 }
 ```
+
+<!--more-->
 
 - 上面就是一个栈的基本属性了，接下来就是栈拥有的方法，分别为存入，取出,因为所有的栈都有这些方法，所以我们定义在Stack的原型上
 

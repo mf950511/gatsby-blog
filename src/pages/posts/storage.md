@@ -1,6 +1,6 @@
 ---
 title: "storage工具类的封装"
-date: 2019-11-1
+date: "2019-11-01"
 name: 'francis'
 age: '24'
 tags: [JavaScript回顾,设计模式,进修]
@@ -13,7 +13,9 @@ categories: JavaScript
 - 日常开发中我们都会涉及到前端数据的存储，对一些需要长期保存在客户端的数据，我们通常会采用浏览器提供的localStorage对象，简称Storage对象。
 - 由于所有的页面处于同一个浏览器环境下，所以各个开发工程师所存储的Storage数据可能会出现同名情况，这样就会相互覆盖相互影响，所以为了解决这一问题，我们需要每个开发者都对自己的存储数据进行前缀命名好避免数据的污染
 - Storage的存储api提供的比较简单，所以要实现这个功能就要我们进行进一步的封装与拓展，以实现我们的需求，首先我们构建一个Storage类，接收一个开发者id与数据分隔符（用于区分内容值与内容有效时间），并初始化状态对象
-  
+
+<!--more-->  
+
 ```js
 function Storage(userId, sep){
   this.userId = userId  // 开发者标识

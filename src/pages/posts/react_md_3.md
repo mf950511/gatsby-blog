@@ -1,6 +1,6 @@
 ---
 title: "从零搭建一个react-hooks项目（三）"
-date: 2020-06-23
+date: "2020-06-23"
 name: 'francis'
 age: '25'
 tags: [react, react hooks, redux, webpack]
@@ -13,6 +13,8 @@ categories: Webpack
 - 接下来我们就配置一下react-router，react-redux与typescript
 - 配置之前我们先补充一下webpack的部分配置，用于方便我们的开发
 - 在webpack.common.js中配置webpack的查找规则，也就是resolve，如下
+
+<!--more-->
 
 ```js
 ...

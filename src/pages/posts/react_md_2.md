@@ -1,6 +1,6 @@
 ---
 title: "从零搭建一个react-hooks项目（二）"
-date: 2020-06-12
+date: "2020-06-12"
 name: 'francis'
 age: '25'
 tags: [react, react hooks, redux, webpack]
@@ -19,6 +19,8 @@ categories: Webpack
 - 先将webpack.config.js中的配置复制到webpack.dev.js中，然后进行我们的基本配置修改
 - 首先开发中需要对错误进行一个精准定位，所以在配置中开启 devtool: "inline-source-map"，如下所示
 - css的样式覆盖关系在我们之前的开发中就已经使用了source: map的属性，所以可以在开发环境中继续使用
+
+<!--more-->
 
 ```js
 const path = require('path')

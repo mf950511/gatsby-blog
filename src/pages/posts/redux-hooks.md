@@ -1,6 +1,6 @@
 ---
 title: "react hooks下使用react-redux"
-date: 2020-06-11
+date: "2020-06-11"
 name: 'francis'
 age: '25'
 tags: [react, react hooks, redux]
@@ -25,6 +25,8 @@ const DECREMENT = 'DECREMENT'
 { type: DECREMENT, payload: number }
 
 ```
+
+<!--more-->
 
 - 接下来，我们就要根据action来进行我们的reducer编写,reducer是一个函数，具有两个初始值，一个是当前的状态值state，一个是当前的操作模式action
 - 我们要根据当前的操作模式进行相应的逻辑处理，并返回新的state,这里我们为state设置一个初始值 0，对应INCREMENT与DECREMENT分别进行加减操作

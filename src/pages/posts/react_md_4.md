@@ -1,6 +1,6 @@
 ---
 title: "从零搭建一个react-hooks项目（四）"
-date: 2020-06-24
+date: "2020-06-24"
 name: 'francis'
 age: '25'
 tags: [react, react hooks, redux, webpack]
@@ -25,6 +25,8 @@ declare module '*.gif'
 declare module '*.bmp'
 declare module '*.tiff'
 ```
+
+<!--more-->
 
 - 这样就能发现我们的ts类型错误消失了
 

@@ -1,6 +1,6 @@
 ---
 title: "JavaScript中实现数据结构队列"
-date: 2020-01-02
+date: "2020-01-02"
 name: 'francis'
 age: '24'
 tags: [JavaScript回顾,数据结构,进修]
@@ -20,6 +20,8 @@ function Quene(){
 ```
 
 - 上面就是一个队列的基本属性了，接下来就是队列拥有的方法，分别为入队，出队,获取队首元素，队尾元素，队列是否为空
+
+<!--more-->
 
 ```js
 Quene.prototype = {

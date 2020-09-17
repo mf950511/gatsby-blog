@@ -1,6 +1,6 @@
 ---
 title: "从零搭建一个react-hooks项目（一）"
-date: 2020-06-11
+date: "2020-06-11"
 name: 'francis'
 age: '25'
 tags: [react, react hooks, redux, webpack]
@@ -19,6 +19,8 @@ categories: Webpack
 - webpack需要安装基本依赖 webpack webpack-cli webpack-dev-server, 命令为 npm i webpack webpack-cli webpack-dev-server -D
 - 安装依赖完成，则需要进行webpack的基本配置，我们在根目录构建 webpack.config.js 文件用于配置webpack
 - 然后在根目录创建一个index.js作为入口文件，我们先构造index.js这个入口文件，代码如下
+
+<!--more-->
 
 ```js
 function a(number){
