@@ -1,6 +1,6 @@
 ---
 title: 'ES2016字符串模板'
-date: 2019-03-11
+date: "2019-03-11"
 name: 'Francis'
 tags: [JavaScript, ES2015, 进修]
 categories: JavaScript
