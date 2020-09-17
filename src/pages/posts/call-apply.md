@@ -1,6 +1,6 @@
 ---
 title: "javascript回顾"
-date: 2019-02-27
+date: "2019-02-27"
 name: 'francis'
 age: '24'
 tags: [JavaScript回顾,回顾,入门]
@@ -15,6 +15,7 @@ categories: JavaScript
 - call,apply,bind之间有什么联系？区别是什么？
 
 ## 问题详解
+
 - 功能上，call，apply，bind都可以用来改变函数内部this的指向
 - 用法上，三者都是函数调用对应的call,apply,bind方法，传入不同的参数实现函数内部this指向改变
 
