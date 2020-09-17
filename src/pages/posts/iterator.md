@@ -1,6 +1,6 @@
 ---
 title: 'ES2015迭代器'
-date: 2019-03-12
+date: "2019-03-12"
 name: 'Francis'
 tags: [JavaScript, ES2015, 进修]
 categories: JavaScript
