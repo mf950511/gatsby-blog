@@ -16,6 +16,7 @@ categories: JavaScript
 
 <!--more-->  
 
+
 ```js
 function Storage(userId, sep){
   this.userId = userId  // 开发者标识
