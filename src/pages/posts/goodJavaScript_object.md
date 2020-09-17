@@ -2,7 +2,7 @@
 title: 'JavaScript语言精粹-对象'
 name: 'Francis'
 age: 24
-date: 2019-03-14
+date: "2019-03-14"
 tags: [JavaScript, 进修]
 categories: JavaScript
 ---
