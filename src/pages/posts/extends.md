@@ -2,7 +2,7 @@
 title: 'JavaScript中的继承'
 name: Francis
 age: 24
-date: 2019-03-21
+date: "2019-03-21"
 tags: ['JavaScript', '进修', 'ES2015']
 categories: JavaScript
 ---
