@@ -12,5 +12,5 @@ categories: Webpack
 - 项目完成大概建起来了，但是当我打个生产包的时候都快哭了，一开始使用的devtool: "source-map"，用时高达 34 s，这当然是不可容忍的
 - 然后我们先将devtool改为"none"，然后发现变为了29s
 
-![图片](../source/webpack.png) 
+![图片](../source/webpack.png)
 
