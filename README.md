@@ -1,12 +1,10 @@
-# gatsby-starter-hello-world
-Starter with the bare essentials needed for a [Gatsby](https://www.gatsbyjs.org/) site.
+// 为避免拉取部分依赖失败，配置了resolutions用于获取国内源
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
-```
+<!-- 启动项目 -->
+npm run develop
 
-Or [view the live demo here](https://gatsby-starter-hello-world-demo.netlify.com/).
+打包文件
+npm run build
 
-## Running in development
-`gatsby develop`
+测试打包文件
+npm run serve
