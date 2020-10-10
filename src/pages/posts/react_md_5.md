@@ -30,6 +30,8 @@ module.exports = smp.wrap(webpackConfig)
 
 ![图片](../source/speed_measure.png)
 
+- 不要在开发模式下使用这个分析插件，否则每次对代码进行修改都会导致webpack异常退出，报错 `Running webpack throws 'Callback was already called' error`
+
 ## 优化一 优化解析速度 - 多进程打包
 
 - 正常的webpack打包是单线程的，文件只能挨个处理，针对大量文件就会很慢，所以官方推荐了 thread_loader ，这个loader放在其他loader之前，，那么它后面的loader就会在单独的worker进程（node.js process）中进行
@@ -134,34 +136,51 @@ module.exports = {
 
 ![图片](../source/vendor_size.png)
 
-- 所以我们需要对其进行优化，在webpack的代码分割配置中，我们修改配置如下
+- 导致vendor包过大的原因主要是我们的react组件都是同步引入的，导致webpack打包时认为是首页就需要的全部组件，从而将所有的依赖与文件都打到了一起
+- 解决这个问题我们就需要react的按需引入功能，配合webpack本身的异步分离打包实现vendor包的优化
+- react本身支持异步导入，但是因为我们的项目使用了babel，所以我们需要确保babel可以解析异步导入语句，并能正确解析，所以引入 'babel-plugin-syntax-dynamic-import' ,使用方法如下
 
 ```js
-module.exports = {
+// 首先引入
+yarn add babel-plugin-syntax-dynamic-import -D -S
+// 然后修改 .babelrc 文件
+"plugins": [
+  "syntax-dynamic-import",
   ...
-  optimization: { // 公共代码抽离
-    runtimeChunk: 'single',
-    splitChunks:{ //启动代码分割，有默认配置项
-      chunks: 'all',
-      maxInitialRequests: Infinity,
-      minSize: 0,
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name(module) {
-            const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-            return `npm.${packageName.replace('@', '')}`;
-          },
-        },
-      },
-    }
-  }
-}
+]
 
 ```
 
-- 然后再执行我们的打包命令，就可以发现，之前只有一个vendor变成很多个对应的npm包的vendor了
+- 这样就保证我们可以正常使用react的异步导入方法了
+- 然后因为我们使用了typescript，并且配置项中的module是 es6 ，但是该模式下不支持异步导入，所以将其修改为 commonjs，如下
+
+```js
+// tsconfig.json
+{
+  "compilerOptions": {
+    ...
+    "module": "commonjs", // 模块引入方式
+  }
+}
+```
+
+- 然后就完成了webpack基本项的配置，接下来就要修改我们的react代码
+- 我们使用react提供的 lazy 方法对组件页面进行异步引入
+
+```js
+// 原代码
+import * as React from 'react'
+import Home from 'pages/home'
+
+// 异步导入
+import * as React from 'react'
+const { lazy } = React
+const Home = lazy(() => import('pages/home'))
+```
+
+- 按这种形式将我们的所有页面引入都修改了，然后再进行打包尝试，打包后的结果如下
 
 ![图片](../source/vendor_list.png)
 
-- 这样的话我们首屏的加载速度也会有一个明显的提升
+- 可以看到我们的vendor变成了 160 多k，并且将原来的大文件拆分为很多小的bundle文件，这对我们的首屏加载有很大的帮助
+
