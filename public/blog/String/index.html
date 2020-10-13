@@ -18,8 +18,9 @@ console.log(String.fromCharCode(97, 98, 99, 100, 101)) // "abcde"
 <ul>
 <li>对于在U+0000~U+FFFF范围内的字符，length、charAt()、charCodeAt()、fromCharCode()都可以正常运行</li>
 <li>当拓展到Unicode增补字符平面就不行了，上面的16位只能标识65536个字符，这些表示基本多语言平面，为了表示更多的字符，采用了每个字符使用另外16位去选择一个增补平面。这种每个字符使用两个16位码元的策略称为代理对</li>
-<li>当我们对含有代理对编码的字符串就会有问题，如下</li>
-</ul>
+<li>
+<p>当我们对含有代理对编码的字符串就会有问题，如下</p>
+<!--more-->
 <pre><code class="language-js">let message = 'ab😊de'
 console.log(message.length)     // 6
 console.log(message.charAt(1))  // b
@@ -30,16 +31,16 @@ console.log(message.charCodeAt(1))  // 98
 console.log(message.charCodeAt(2))  // 55357
 console.log(message.charCodeAt(3))  // 56842
 console.log(message.charCodeAt(4))  // 100
-
-
-console.log(String.fromCharCode(97, 98, 55357, 56842, 100, 101)) // ab😊de
 </code></pre>
-<ul>
-<li>这里我们能看到笑脸符明显占了两个字符，然后我们尝试使用fromCharCode()来将代理对进行解析为字符串是没有问题的，这是因为浏览器可以正常解析代理对</li>
-<li>针对这种情况，我们可以使用codePointAt()来替代charCodeAt()</li>
-<li>codePointAt()使用方法跟charCodeAt()基本一致，也是接受一个表示索引的参数并返回该索引的码点。码点是Unicode中一个字符的完整标识，可能是16位，也有可能32位，codePointAt()可以查看完整的码点</li>
+</li>
 </ul>
-<pre><code class="language-js">let message = 'ab😊de'
+<p>console.log(String.fromCharCode(97, 98, 55357, 56842, 100, 101)) // ab😊de</p>
+<pre><code>- 这里我们能看到笑脸符明显占了两个字符，然后我们尝试使用fromCharCode()来将代理对进行解析为字符串是没有问题的，这是因为浏览器可以正常解析代理对
+- 针对这种情况，我们可以使用codePointAt()来替代charCodeAt()
+- codePointAt()使用方法跟charCodeAt()基本一致，也是接受一个表示索引的参数并返回该索引的码点。码点是Unicode中一个字符的完整标识，可能是16位，也有可能32位，codePointAt()可以查看完整的码点
+
+```js
+let message = 'ab😊de'
 console.log(message.codePointAt(1))  // 98
 console.log(message.codePointAt(2))  // 128522
 console.log(message.codePointAt(3))  // 56842

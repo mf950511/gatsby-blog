@@ -11,33 +11,35 @@
 <li>ECMAScript规范中，此符号用于描述一个对象返回默认异步迭代对象的方法属性。当对象具有该属性则该对象是异步可迭代的，可以被 for await of 表达式调用。</li>
 <li>语言构造器例如 for await of 利用该符号对应的方法来实现异步迭代。</li>
 <li>所以我们可以对一个自定义对象添加该符号方法实现其可被for await of 调用</li>
-<li>for await of 的调用必须在async 函数下才可以</li>
-</ul>
+<li>
+<p>for await of 的调用必须在async 函数下才可以</p>
+<!--more-->
 <pre><code class="language-js">var a = { a :1, b: 2 }
 async function b(){
-  for await(var value of a) {
-    console.log(a)
-  }
+for await(var value of a) {
+console.log(a)
+}
 }
 b() // TypeError: a is not async iterable
-
-var a = {
-  a :1,
-  b: 2,
-  *[Symbol.asyncIterator](){
-  }
+</code></pre>
+</li>
+</ul>
+<p>var a = {
+a :1,
+b: 2,
+*<a href="">Symbol.asyncIterator</a>{
+}
 }
 async function b(){
-  for await(var value of a) {
-    console.log(a)
-  }
+for await(var value of a) {
+console.log(a)
 }
-b() // Promise {&#x3C;resolved>: undefined}
-</code></pre>
-<ul>
-<li>可以看出只要我们实现了符号对应的异步方法，就可以正常调用，下面我们可以自定义我们想要的表现形式</li>
-</ul>
-<pre><code class="language-js">class Emitter {
+}
+b() // Promise {<resolved>: undefined}</p>
+<pre><code>- 可以看出只要我们实现了符号对应的异步方法，就可以正常调用，下面我们可以自定义我们想要的表现形式
+
+```js
+class Emitter {
   constructor(max) {
     this.max = max
     this.asyncIdx = 0
