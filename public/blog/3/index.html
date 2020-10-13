@@ -67,7 +67,213 @@ declare module '*.tiff'
 </code></pre>
 </div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/Webpack">Webpack</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/react">react</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/react hooks">react hooks</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/redux">redux</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/webpack">webpack</a></div></div></div><div class="article-more-link"><a href="/blog/react_md_4/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/react_hooks/"><h1 class="article-title left">react hooks下封装通用redux</h1></a><div class="article-entry"><h1>react hooks下封装通用redux</h1>
 <p>redux我们常用来做全局状态管理，一般我们都会按功能模块来新建相关的action，reducer然后再使用combineReducers来将其组合导出，这样的话就实现了模块的划分，让我们更方便项目的管理。但是在某些情况下，我们想要一个通用的redux管理，比如一些特别小，但是又必须要用到的场景，比如我们现在新建了一个chat模块用来管理聊天相关的redux，新建了一个menu模块来管理我们的菜单模块，新建了一个number模块用来管理我们的数据状态，但是这时候我想要对顶部导航栏的显示与隐藏添加一个reducer用来与其他组件交互，这种情况下还要单独再开一个nav模块吗？肯定是不愿意的，所以针对我们这些比较小的功能模块，我们想封装一个通用的reducer，这个通用的reducer共享一个normal数据，dispatch时接受一组数据key,value用于进行数据的改变，下面就是我们的封装过程</p>
-</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/React">React</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/react">react</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/react hooks">react hooks</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/redux">redux</a></div></div></div><div class="article-more-link"><a href="/blog/react_hooks/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/react_md_5/"><h1 class="article-title left">从零搭建一个react-hooks项目（五）</h1></a><div class="article-entry"><h1>从零搭建一个react-hooks项目（五）</h1>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/React">React</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/react">react</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/react hooks">react hooks</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/redux">redux</a></div></div></div><div class="article-more-link"><a href="/blog/react_hooks/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/object-type/"><h1 class="article-title left">遗忘的对象基本属性</h1></a><div class="article-entry"><h1>对象类型与基本方法</h1>
+<ul>
+<li>对象的创建我们可以采用 new 关键字加对象类型的名称来进行创建，比如创建一个基本对象，就是</li>
+</ul>
+<pre><code class="language-js">let o = new Object()
+</code></pre>
+<ul>
+<li>需要注意的是，后面的括号并不是必须的，当我们创建对象不需要传参则不需要后面的括号也不会报错，但是不推荐，如下</li>
+</ul>
+<pre><code class="language-js">let o = new Object // 不推荐
+</code></pre>
+<ul>
+<li>Object类型是所有其他对象类型的基础，其他对象类型都基于它进行的衍生，所以所有的对象都具有下面这些Object的基本方法</li>
+</ul>
+<pre><code class="language-js">isPropertyof(object) // 决定一个对象是否是另一个对象的原型
+propertyIsEnumerable(propertyName) // 决定一个对象属性是否可枚举
+</code></pre></div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/object-type/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/unary-operators/"><h1 class="article-title left">不常用的一元操作符</h1></a><div class="article-entry"><h1>不常用的一元操作符</h1>
+<h2>位操作符</h2>
+<ul>
+<li>ECMAScript中数值都是已64位格式存储，但是位操作符不能直接在64位中操作，要把值转为32位整数，操作完成后再转为64位整数。</li>
+<li>对开发者来说，是不用关注64位整数的，我们感知不到，我们只需要知道32位整数的工作原理即可</li>
+<li>有符号整数由一位符号位与31位二进制数值位来表示。第一位的符号位0表示正数，1表示负数。其他的数决定这个数的大小，数值跟二进制转十进制的方式相同，从最后一位开始，第一个代表2的0次方，第二个代表2的一次方，没有实际值的按0来填充。比如18按32位来表示为</li>
+</ul>
+<pre><code class="language-js">00000000000000000000000000010010 // 32位表示18
+//转换方式
+(Math.pow(2, 0)) * 0 + (Math.pow(2, 1)) * 1 + (Math.pow(2, 2)) * 0 + (Math.pow(2, 3)) * 0 + (Math.pow(2, 4)) * 1
+</code></pre>
+<ul>
+<li>负数也是用二进制来表示，但是跟正数不一样，负数的表示是对应32位正数的补码。有三个步骤</li>
+<li>第一步，写出该负数的绝对值对应的32位数</li>
+<li>第二步，将32位数中的0变为1，1变为0</li>
+<li>第三步，在第二步得到的数上加1，然后逢二进一，比如-18的表示</li>
+</ul>
+<pre><code class="language-js">// 1.写出绝对值，也就是18的32位数
+00000000000000000000000000010010
+// 2.将0变为1，1变为0
+11111111111111111111111111101101
+// 3.在第二步的基础上加1
+11111111111111111111111111101110 // -18的32位表现形式
+</code></pre>
+<ul>
+<li>ECMAScript会尽量的将这些数据都给你保留，当你使用toString并指定二进制数值时，会返回'-10010'来给你</li>
+</ul>
+<pre><code class="language-js">let num = -18
+console.log(num.toString(2)) // '-10010'
+</code></pre>
+<ul>
+<li>上面是有符号正数，当我们用来表示无符号整数是，第一位就不再是符号位，也是真正的数值位，所以无符号整数可以比有符号整数大一点</li>
+<li>在ECMAScript中使用位运算时，会先将64位整数转为32位正数，然后进行位运算，然后转为64位整数，这也就给我们一个错觉，我们在操作真正的32位正数。这也使得对二进制的操作与其他语言相似。</li>
+<li>在这个处理中有两个特殊值NaN跟Infinity会跟0的处理方式一样</li>
+<li>如果为非数值类型使用位操作符则会使用Number()强制转为数值，然后计算</li>
+</ul>
+<h2>Not操作符(~)</h2>
+<ul>
+<li>简单的返回一个数对应32位数的补码（即0变为1，1变为0）</li>
+</ul>
+<pre><code class="language-js">let num = 25 
+// 对应的32位数
+000000000000000000000000000011001
+// 使用位操作符
+111111111111111111111111111100110
+// 然后将32位数转为对应的负数，将之前的三步倒过来
+// 1.减1
+111111111111111111111111111100101
+// 2. 取补码
+000000000000000000000000000011010
+// 3.计算值并加负号
+-26
+</code></pre>
+<ul>
+<li>所以我们在对25进行了~操作后就得到了-26</li>
+<li>其实，~操作的结果就是我们对要操作的数进行取反，然后减1即可</li>
+<li>位操作符因为操作数值的最低级别，所以速度极快</li>
+</ul>
+<h2>AND操作符(&#x26;)</h2>
+<ul>
+<li>该符号工作于两个值，将两个值对应的位进行操作，只有当两个值对应位都是1才返回1，否则返回0，如下</li>
+</ul>
+<pre><code class="language-js">let result = 25 &#x26; 3
+// 25的32位数
+000000000000000000000000000011001
+// 3的32位数
+000000000000000000000000000000011
+// 对应值
+000000000000000000000000000000001
+// 转为整数就是1
+console.log(result) // 1
+</code></pre>
+<h2>OR操作符(|)</h2>
+<ul>
+<li>该符号同样作用于两个值，对两个值的为进行操作，只有当两个值对应位都是0才返回0，否则返回1，如下</li>
+</ul>
+<pre><code class="language-js">let result = 25 | 3
+// 25的32位数
+000000000000000000000000000011001
+// 3的32位数
+000000000000000000000000000000011
+// 对应值
+000000000000000000000000000011011
+// 转换为整数就是 27
+console.log(result) // 27
+</code></pre>
+<h2>XOR操作符(^)</h2>
+<ul>
+<li>同样作用与两个值，将两个数的32位数进行比较，当相同时返回0，不同时返回1，比如 0跟0返回0，1跟1返回0， 1跟0返回1，0跟1返回1，如下</li>
+</ul>
+<pre><code class="language-js">let result = 25 | 3
+// 25的32位数
+000000000000000000000000000011001
+// 3的32位数
+000000000000000000000000000000011
+// 对应值
+000000000000000000000000000011010
+// 转换为整数就是 26
+console.log(result) // 26
+</code></pre>
+<h2>左移操作</h2>
+<ul>
+<li>左移操作由两个 &#x3C; 表示，并且将除符号位之外所有的位数向左移动指定的位数，比如对2进行左移5操作，如下</li>
+</ul>
+<pre><code class="language-js">let val = 2
+let newVal = val &#x3C;&#x3C; 5
+// 首先将2转为32位数
+000000000000000000000000000000010
+// 然后将除符号位的数向左移动5位
+0000000000000000000000000010
+// 然后把后面空出来的用0补起来
+000000000000000000000000001000000
+// 最终得到  64
+console.log(newVal) // 64
+</code></pre>
+<ul>
+<li>左移操作不会修改符号位，所以对-2进行左移5位得到的是-64而不是64</li>
+</ul>
+<h2>有符号右移操作</h2>
+<ul>
+<li>有符号右移使用两个 > 然后跟一个移动数量来表示，比如对64进行右移5操作，如下</li>
+</ul>
+<pre><code class="language-js">let val = 64
+let newVal = val >> 5
+// 首先将64转为32位数
+000000000000000000000000001000000
+// 然后将除符号位的数向右移动5位
+0     000000000000000000000000010
+// 然后把前面空出来的用0补起来
+000000000000000000000000000000010
+// 最终得到  2
+console.log(newVal) // 2
+</code></pre>
+<ul>
+<li>有符号右移操作同样不会修改符号位，所以对-64进行右移5位得到的是-2而不是2</li>
+</ul>
+<h2>无符号右移操作</h2>
+<ul>
+<li>无符号右移操作是使用三个 > 然后跟一个右移数量表示，因为是无符号数，所以32位都表示数值，也就不会对第一位进行保留了</li>
+<li>这种情况下对正数进行右移并不会改变原来的值，因为符号位本来就是0，如下</li>
+</ul>
+<pre><code class="language-js">let val = 64
+let newVal = val >> 5
+// 首先将64转为32位数
+000000000000000000000000001000000
+// 然后将所有数向右移动5位
+     0000000000000000000000000010
+// 然后把前面空出来的用0补起来
+000000000000000000000000000000010
+// 最终得到  2
+console.log(newVal) // 2
+</code></pre>
+<ul>
+<li>但是针对负数就不一样了，因为负数是对应正数取补码加1，所以表现形式不一致，比如-64，如下</li>
+</ul>
+<pre><code class="language-js">let val = -64
+let newVal = val >>> 5
+// 首先将-64转为32位数
+111111111111111111111111111000000
+// 然后将所有数向右移动5位
+     1111111111111111111111111110
+// 然后把前面空出来的用0补起来
+000001111111111111111111111111110
+// 最终得到  134217726
+console.log(newVal) // 134217726
+</code></pre>
+<h2>逻辑与(&#x26;&#x26;)</h2>
+<ul>
+<li>同样作用于两个值，类型无要求返回逻辑如下</li>
+<li>两个都是boolean值，则只有两个都是true才返回true，否则返回false</li>
+<li>如果第一个是对象，则一定返回第二个值</li>
+<li>如果第二个是对象，则只有第一个为true时才返回这个对象</li>
+<li>两个都是对象，则返回第二个对象</li>
+<li>两个中有一个null，返回null</li>
+<li>两个中有一个NaN，返回NaN</li>
+<li>两个中有一个undefined，返回undefined</li>
+<li>如果两个为undefined、null、NaN中的两个则第一个是什么就返回什么</li>
+<li>&#x26;&#x26;为短路操作符，第一个为false，则第二个永远不会执行，如下</li>
+</ul>
+<h2>逻辑或(||)</h2>
+<ul>
+<li>同样作用与两个值，类型无要求</li>
+<li>两个都是boolean值，则只有两个都是false才返回false，否则返回true</li>
+<li>如果第一个是对象，则返回第一个</li>
+<li>如果第一个是false，则返回第二个</li>
+<li>两个都是对象，返回第一个</li>
+<li>两个都是null，返回null</li>
+<li>两个都是undefined，返回undefined</li>
+<li>两个都是NaN，返回NaN</li>
+<li>||也是短路操作符，第一个为true，则第二个不执行</li>
+</ul></div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/unary-operators/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/react_md_5/"><h1 class="article-title left">从零搭建一个react-hooks项目（五）</h1></a><div class="article-entry"><h1>从零搭建一个react-hooks项目（五）</h1>
 <ul>
 <li>项目完成大概建起来了，但是当我打个生产包的时候都快哭了，一开始使用的devtool: "source-map"，用时高达 34 s，这当然是不可容忍的</li>
 <li>然后我们先将devtool改为"none"，然后发现变为了29s</li>
@@ -112,4 +318,75 @@ module.exports = smp.wrap(webpackConfig)
 <ul>
 <li>然后在打包时就会显示打包中各阶段花费的时间，显示如下</li>
 </ul>
-</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/Webpack">Webpack</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/react">react</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/react hooks">react hooks</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/redux">redux</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/webpack">webpack</a></div></div></div><div class="article-more-link"><a href="/blog/react_md_5/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div></div><div class="paganation-module--paganation--2bE_X"><a class="paganation-module--extend--2q4Qk" href="/blog/1">« Prev</a><a class="paganation-module--pageNumber--RUHS6 " href="/blog/">1</a><a class="paganation-module--pageNumber--RUHS6 " href="/blog/2">2</a><a aria-current="page" class="paganation-module--pageNumber--RUHS6 paganation-module--current--39YZ4" href="/blog/3">3</a><a aria-current="page" class="paganation-module--hide--wBlxP" href="/blog/3">Next »</a></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/3";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-86eae43148bf2d393162.js"],"app":["/app-03a564126170dae91f0b.js"],"component---src-pages-404-js":["/component---src-pages-404-js-52d225bf1fd405f33e03.js"],"component---src-pages-all-file-js":["/component---src-pages-all-file-js-8a4e9b634903be2f7e84.js"],"component---src-pages-index-js":["/component---src-pages-index-js-2ae84adc87fbf451f4b1.js"],"component---src-templates-blog-small-jsx":["/component---src-templates-blog-small-jsx-7847ba26c250224f083e.js"],"component---src-templates-category-jsx":["/component---src-templates-category-jsx-59463967dee71859a4f9.js"],"component---src-templates-index-jsx":["/component---src-templates-index-jsx-1afb50278c9b0fcb6759.js"],"component---src-templates-tag-jsx":["/component---src-templates-tag-jsx-428646eb6a5d437de98d.js"]};/*]]>*/</script><script src="/polyfill-86eae43148bf2d393162.js" nomodule=""></script><script src="/webpack-runtime-c691ad7dc71c44256655.js" async=""></script><script src="/app-03a564126170dae91f0b.js" async=""></script><script src="/framework-31fa3cffff5950ebff26.js" async=""></script><script src="/83d6cd58f512da6a6ea6dd96bfbf09511419d80b-744605ee7713f03b785c.js" async=""></script><script src="/component---src-templates-index-jsx-1afb50278c9b0fcb6759.js" async=""></script><script src="/styles-89fd2ae28bdf06750a71.js" async=""></script></body></html>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/Webpack">Webpack</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/react">react</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/react hooks">react hooks</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/redux">redux</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/webpack">webpack</a></div></div></div><div class="article-more-link"><a href="/blog/react_md_5/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/collect-garbage/"><h1 class="article-title left">javascript中的垃圾回收</h1></a><div class="article-entry"><ul>
+<li>javascript中的垃圾回收历史有两种，一种是最常用的标记清除，一种是不常用的引用计数清除法。</li>
+</ul>
+<h2>标记清除</h2>
+<ul>
+<li>标记清除是现代浏览器最常用的垃圾回收方式，原理是：</li>
+<li>当上下文有变量进入的时候就为它添加一个标记，这样整个程序执行时每一个创建的变量都会被添加标记。当变量离开上下文时也会被加上离开上下文的标记。然后当垃圾回收进程执行时，会把当前上下文的所有变量跟被引用的变量去除标记，这样剩下的有标记就都是不被引用也不被使用的变量了，这样就可以做内存清理了，销毁带标记的值并回收内存。</li>
+</ul>
+<h2>引用计数清除</h2>
+<ul>
+<li>这种计数方式在早期浏览器有使用过，后面就基本不怎么使用了，原理如下：</li>
+<li>当一个值被赋值给一个变量时就会把该值的引用数加一。比如，当声明一个变量并引用该值，则该值的引用数加一，当这个值被赋给另一个变量时，引用数继续加一。当一个引用该值的变量被其他值覆盖了，则该值的引用数减一，当引用数为0则表示该值不可被访问了，就会被垃圾回收。</li>
+<li>该方式不常用是因为在循环引用时会无法释放内存，比如当a是一个对象，b也是一个对象，a的某个属性指向了b，b的某个属性指向了a，这样他们的引用值一直都不会为0，也就导致了该值一直存在无法回收。只有当我们显示的将a对应的属性跟b对应的属性都赋值null才会让他们进入垃圾回收。</li>
+</ul>
+<h2>性能优化</h2>
+<ul>
+<li>现代浏览器的垃圾回收都是按照已分配对象的大小跟数量来判断的，这是因为早期IE是根据分配数来进行垃圾回收，比如设定了256个变量或者64k的字符串等，当满足其中的条件就会进行回收，这有可能整个脚本始终存在这么多的变量就导致了一直在运行，严重影响性能。</li>
+<li>所以改为了现有的根据分配对象来进行，首先它的起始阈值跟之前是一致的，只不过当某次垃圾回收的内存不到已分配的15%，那么就说明程序过大，这个阈值不够了，就会对阈值进行翻倍，然后下一次如果还是不到15%就继续翻倍，直到它满足15%以上为止</li>
+<li>如果某次的内存已经达到了85%，说明这个阈值已经过大了，应该再频繁一点，然后就会重置为默认值，重复进行这两个步骤，这样我们的性能就有很好的提升</li>
+<li>对声明的全局变量要是不再使用应该置为null</li>
+<li>多使用let、const提升性能，因为都是块级作用域，肯定会比全局变量更早终止，也就有可能更早的被回收</li>
+</ul>
+<h2>隐藏类优化性能</h2>
+<ul>
+<li>当我们的两个对象共享一个构造函数与原型时，在v8引擎会默认两个实例引用同一个隐藏类，如下：</li>
+</ul>
+<pre><code class="language-js">function Article(){
+  this.title = "my name"
+}
+let a1 = new Article()
+let a2 = new Article()
+</code></pre>
+<ul>
+<li>这种情况下会默认使用一个隐藏类，但是当我们对对象进行了删除或者新增属性就会打破这个规则，如下</li>
+</ul>
+<pre><code class="language-js">// 新增属性
+function Article(){
+  this.title = "my name"
+}
+let a1 = new Article()
+let a2 = new Article()
+a2.name = 'danny'
+
+// 删除属性
+function Article(){
+  this.title = "my name"
+}
+let a1 = new Article()
+let a2 = new Article()
+delete a2.title
+</code></pre>
+<ul>
+<li>这两种情况都会导致不再共享一个隐藏类，对应两个隐藏类，如果隐藏类过大就会影响性能，我们可以进行下面的优化</li>
+<li>对需要新增的属性操作添加在原型内，如下</li>
+</ul>
+<pre><code class="language-js">function Article(name){
+  this.title = "my name"
+  this.name = name
+}
+let a1 = new Article()
+let a2 = new Article('danny')
+</code></pre>
+<ul>
+<li>这样还是共用一个隐藏类，针对删除操作，我们不要显示的删除，只需要将值设为null即可，如下</li>
+</ul>
+<pre><code class="language-js">function Article(){
+  this.title = "my name"
+}
+let a1 = new Article()
+let a2 = new Article()
+a2.title = null
+</code></pre></div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/collect-garbage/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div></div><div class="paganation-module--paganation--2bE_X"><a class="paganation-module--extend--2q4Qk" href="/blog/1">« Prev</a><a class="paganation-module--pageNumber--RUHS6 " href="/blog/">1</a><a class="paganation-module--pageNumber--RUHS6 " href="/blog/2">2</a><a aria-current="page" class="paganation-module--pageNumber--RUHS6 paganation-module--current--39YZ4" href="/blog/3">3</a><a class="paganation-module--pageNumber--RUHS6 " href="/blog/4">4</a><a aria-current="page" class="paganation-module--extend--2q4Qk" href="/blog/3">Next »</a></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/3";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-86eae43148bf2d393162.js"],"app":["/app-03a564126170dae91f0b.js"],"component---src-pages-404-js":["/component---src-pages-404-js-52d225bf1fd405f33e03.js"],"component---src-pages-all-file-js":["/component---src-pages-all-file-js-8a4e9b634903be2f7e84.js"],"component---src-pages-index-js":["/component---src-pages-index-js-2ae84adc87fbf451f4b1.js"],"component---src-templates-blog-small-jsx":["/component---src-templates-blog-small-jsx-7847ba26c250224f083e.js"],"component---src-templates-category-jsx":["/component---src-templates-category-jsx-59463967dee71859a4f9.js"],"component---src-templates-index-jsx":["/component---src-templates-index-jsx-1afb50278c9b0fcb6759.js"],"component---src-templates-tag-jsx":["/component---src-templates-tag-jsx-428646eb6a5d437de98d.js"]};/*]]>*/</script><script src="/polyfill-86eae43148bf2d393162.js" nomodule=""></script><script src="/webpack-runtime-c691ad7dc71c44256655.js" async=""></script><script src="/app-03a564126170dae91f0b.js" async=""></script><script src="/framework-31fa3cffff5950ebff26.js" async=""></script><script src="/83d6cd58f512da6a6ea6dd96bfbf09511419d80b-744605ee7713f03b785c.js" async=""></script><script src="/component---src-templates-index-jsx-1afb50278c9b0fcb6759.js" async=""></script><script src="/styles-89fd2ae28bdf06750a71.js" async=""></script></body></html>
