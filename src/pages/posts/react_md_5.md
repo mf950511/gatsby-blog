@@ -184,3 +184,43 @@ const Home = lazy(() => import('pages/home'))
 
 - 可以看到我们的vendor变成了 160 多k，并且将原来的大文件拆分为很多小的bundle文件，这对我们的首屏加载有很大的帮助
 
+## 优化四 cdn引入
+
+- 当前项目打包完成后能发现 echarts 的模块体积太大，这时我们就要对 echarts 进行cdn引入了，避免打包体积大影响我们的页面加载，如下
+- 移除 package.json 中的依赖
+- html中新增script标签引入echarts 
+- 配置webpack中的externals，使其能够正确的查找到 echarts 的依赖
+
+```js
+// 引入cdn
+<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+
+
+// 然后修改 webpack.common.js 文件
+"externals": {
+  echarts: "echarts"
+},
+
+```
+
+## 优化五 添加打包进度
+
+- 采用依赖库 webpackbar 即可实现打包进度，
+
+```js
+// 首先引入
+yarn add webpackbar -D
+// 然后修改 webpack.common.js 文件
+const webpackBar = require('webpackbar')
+
+module.exports = {
+  ...,
+  plugins: [
+    new webpackBar({
+      name: devMode ? '启动中' : '打包中',
+      color: '#3c99b0',
+    })
+  ],
+}
+
+```
