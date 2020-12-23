@@ -338,7 +338,22 @@ module.exports = smp.wrap(webpackConfig)
 <ul>
 <li>然后在打包时就会显示打包中各阶段花费的时间，显示如下</li>
 </ul>
-</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/Webpack">Webpack</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/react">react</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/react hooks">react hooks</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/redux">redux</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/webpack">webpack</a></div></div></div><div class="article-more-link"><a href="/blog/react_md_5/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/collect-garbage/"><h1 class="article-title left">javascript中的垃圾回收</h1></a><div class="article-entry"><ul>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/Webpack">Webpack</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/react">react</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/react hooks">react hooks</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/redux">redux</a></div><div class="tagInfo-module--tag--1NeBn"><a href="/tag/webpack">webpack</a></div></div></div><div class="article-more-link"><a href="/blog/react_md_5/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/collect-garbage2/"><h1 class="article-title left">javascript中的垃圾回收</h1></a><div class="article-entry"><h1>javascript中的垃圾回收</h1>
+<ul>
+<li>javascript中的垃圾回收历史有两种，一种是最常用的标记清除，一种是不常用的引用计数清除法。</li>
+</ul>
+<h2>标记清除</h2>
+<ul>
+<li>标记清除是现代浏览器最常用的垃圾回收方式，原理是：</li>
+<li>当上下文有变量进入的时候就为它添加一个标记，这样整个程序执行时每一个创建的变量都会被添加标记。当变量离开上下文时也会被加上离开上下文的标记。然后当垃圾回收进程执行时，会把当前上下文的所有变量跟被引用的变量去除标记，这样剩下的有标记就都是不被引用也不被使用的变量了，这样就可以做内存清理了，销毁带标记的值并回收内存。</li>
+</ul>
+<h2>引用计数清除</h2>
+<ul>
+<li>这种计数方式在早期浏览器有使用过，后面就基本不怎么使用了，原理如下：</li>
+<li>当一个值被赋值给一个变量时就会把该值的引用数加一。比如，当声明一个变量并引用该值，则该值的引用数加一，当这个值被赋给另一个变量时，引用数继续加一。当一个引用该值的变量被其他值覆盖了，则该值的引用数减一，当引用数为0则表示该值不可被访问了，就会被垃圾回收。</li>
+<li>
+<p>该方式不常用是因为在循环引用时会无法释放内存，比如当a是一个对象，b也是一个对象，a的某个属性指向了b，b的某个属性指向了a，这样他们的引用值一直都不会为0，也就导致了该值一直存在无法回收。只有当我们显示的将a对应的属性跟b对应的属性都赋值null才会让他们进入垃圾回收。</p>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/collect-garbage2/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/collect-garbage/"><h1 class="article-title left">javascript中的垃圾回收</h1></a><div class="article-entry"><ul>
 <li>javascript中的垃圾回收历史有两种，一种是最常用的标记清除，一种是不常用的引用计数清除法。</li>
 </ul>
 <h2>标记清除</h2>
@@ -797,4 +812,106 @@ const Person = class {}
 <ul>
 <li>
 <p>代理使用Proxy构造函数来创建，接收两个参数： 目标对象和处理程序对象，缺少任何一个参数都会报错，创建一个空代理只需要将对象字面量作为处理程序传递即可，如下</p>
-</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/proxy/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div></div><div class="paganation-module--paganation--2bE_X"><a class="paganation-module--hide--wBlxP" href="/blog/-1">« Prev</a><a class="paganation-module--pageNumber--RUHS6 paganation-module--current--39YZ4" href="/blog/">1</a><a class="paganation-module--pageNumber--RUHS6 " href="/blog/2">2</a><a class="paganation-module--pageNumber--RUHS6 " href="/blog/3">3</a><a class="paganation-module--pageNumber--RUHS6 " href="/blog/4">4</a><a class="paganation-module--pageNumber--RUHS6 " href="/blog/5">5</a><a class="paganation-module--pageNumber--RUHS6 " href="/blog/6">6</a><a class="paganation-module--extend--2q4Qk" href="/blog/1">Next »</a></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-86eae43148bf2d393162.js"],"app":["/app-03a564126170dae91f0b.js"],"component---src-pages-404-js":["/component---src-pages-404-js-52d225bf1fd405f33e03.js"],"component---src-pages-all-file-js":["/component---src-pages-all-file-js-8a4e9b634903be2f7e84.js"],"component---src-pages-index-js":["/component---src-pages-index-js-2ae84adc87fbf451f4b1.js"],"component---src-templates-blog-small-jsx":["/component---src-templates-blog-small-jsx-7847ba26c250224f083e.js"],"component---src-templates-category-jsx":["/component---src-templates-category-jsx-59463967dee71859a4f9.js"],"component---src-templates-index-jsx":["/component---src-templates-index-jsx-1afb50278c9b0fcb6759.js"],"component---src-templates-tag-jsx":["/component---src-templates-tag-jsx-428646eb6a5d437de98d.js"]};/*]]>*/</script><script src="/polyfill-86eae43148bf2d393162.js" nomodule=""></script><script src="/webpack-runtime-c691ad7dc71c44256655.js" async=""></script><script src="/app-03a564126170dae91f0b.js" async=""></script><script src="/framework-31fa3cffff5950ebff26.js" async=""></script><script src="/83d6cd58f512da6a6ea6dd96bfbf09511419d80b-744605ee7713f03b785c.js" async=""></script><script src="/component---src-pages-index-js-2ae84adc87fbf451f4b1.js" async=""></script><script src="/styles-89fd2ae28bdf06750a71.js" async=""></script></body></html>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/proxy/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/function/"><h1 class="article-title left">函数--高程4</h1></a><div class="article-entry"><h1>函数</h1>
+<ul>
+<li>函数实际上是对象，每个函数都是Function类型的实例</li>
+<li>函数通常以函数声明的方式定义</li>
+</ul>
+<pre><code class="language-js">function sum(num1, num2) {
+  return num1 + num2
+}
+</code></pre>
+<ul>
+<li>
+<p>还能以函数表达式来定义</p>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/function/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/function2/"><h1 class="article-title left">函数-闭包--高程4</h1></a><div class="article-entry"><h1>函数</h1>
+<h2>递归</h2>
+<ul>
+<li>递归函数通常是一个函数通过名称自己调用自己</li>
+</ul>
+<pre><code class="language-js">// 耦合性太强
+function factorial(num){
+  if(num &#x3C;= 1) {
+    return 1
+  } else {
+    return num * factorial(num - 1)
+  }
+}
+
+// 严格模式下报错
+function factorial(num){
+  if(num &#x3C;= 1) {
+    return 1
+  } else {
+    return num * arguments.callee(num - 1)
+  }
+}
+</code></pre>
+<ul>
+<li>
+<p>这样是我们的第一感觉，但是上一章说过，这样的话如果把它赋值给其他变量就会出问题，所以上一章我们用的是arguments.callee来进行调用，但是这样在严格模式下报错，所以我们可以使用命名函数表达式来完成，如下</p>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/function2/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/Promise/"><h1 class="article-title left">深入Promise--高程4</h1></a><div class="article-entry"><h1>深入Promise</h1>
+<ul>
+<li>Promise中执行resolve会有一个内部值，执行reject会有一个内部理由，默认情况下，这个值跟理由都是undefined</li>
+<li>Promise中使用reject进入拒绝态时没有进行捕获会抛出错误</li>
+</ul>
+<pre><code class="language-js">let p1 = Promise.resolve()
+let p = Promise.reject()
+setTimeout(console.log, 0, p1) // Promise {&#x3C;resolved>: undefined}
+setTimeout(console.log, 0, p)
+// Uncaught (in promise) undefined
+// Promise {&#x3C;rejected>: undefined}
+</code></pre>
+<ul>
+<li>Promise.resolve()可以将任何值转为Promise</li>
+</ul>
+<pre><code class="language-js">setTimeout(console.log, 0, Promise.resolve(3))
+// Promise {&#x3C;resolved>: 3}
+</code></pre>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/Promise/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/BOM-window/"><h1 class="article-title left">BOM —— window对象</h1></a><div class="article-entry"><h1>window对象</h1>
+<ul>
+<li>BOM的核心是window对象，表示浏览器的实例。window在浏览器中有两重身份，一个是ECMAScript中的Global对象，一个是浏览器窗口中的JavaScript接口。</li>
+<li>意味着网页中定义的所有对象、变量、函数都以window作为其Global对象</li>
+<li>所有通过var声明的全局变量或函数都会成为window对象的属性和方法</li>
+</ul>
+<h2>窗口关系</h2>
+<ul>
+<li>top对象指向最外层窗口，即浏览器本身。</li>
+<li>parent对象指向当前窗口的父窗口。如果当前窗口是最上层窗口，则parent等于top（都等于window）</li>
+<li>还有self属性，它是终极的window属性，始终指向window。这些都是window的属性，可以通过window.top的方式来访问</li>
+<li>window对象的位置可以通过不同的属性跟方法确定，现代浏览器提供了screenLet跟screentTop属性，用于确定窗口相对于屏幕左侧跟顶部的位置，返回值的单位是css像素</li>
+<li>可以使用moveTo跟moveBy来移动窗口，都接收两个参数</li>
+<li>moveTo接收要移动到的位置的绝对坐标x很y</li>
+<li>moveBy接收相对于当前位置在两个方向上的像素数</li>
+<li>这两个方法在不同的浏览器中可能会被部分或全部禁用</li>
+</ul>
+<pre><code class="language-js">window.moveTo(0, 0) // 移动到左上角
+window.moveTo(200, 300) // 移动到坐标 200， 300
+window.moveBy(0, 100) // 向下移动100
+window.moveBy(-50, 0) // 向左移动50
+</code></pre>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/BOM-window/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/locationAndNavigator/"><h1 class="article-title left">location对象与navigator对象</h1></a><div class="article-entry"><h1>location对象与navigator对象</h1>
+<h2>location对象</h2>
+<ul>
+<li>location是常用的BOM对象，提供了当前窗口中加载文档的信息，以及常用的导航功能</li>
+<li>它既是window属性，也是document属性，window.location跟document.location两个指向同一个对象</li>
+<li>location对象保存着当前加载文档的信息，还有URL解析为离散片段后能够属性访问的信息。</li>
+<li>
+<p>以下URL来做实例 "<a href="http://ouser:barpassword@www.wrox.com:80/WileyCDA/?q=javascript#contents">http://ouser:barpassword@www.wrox.com:80/WileyCDA/?q=javascript#contents</a>"</p>
+<ul>
+<li>location.hash: '#contents',散列值，#后跟零或者多个字符串，没有就是空字符串</li>
+<li>location.host: 'www.wrox.com:80'，服务器名及端口号</li>
+<li>locaion.hostname: 'www.wrox.com'，服务器名</li>
+<li>location.href: '<a href="http://www.wrox.com:80/WileyCDA/?q=javascript#contents&#x27;">http://www.wrox.com:80/WileyCDA/?q=javascript#contents'</a>, 当前加载页面的完整URL。location.toString就返回这个值</li>
+<li>location.pathname: '/WileyCDA/'，URL中的路径和（或）文件名</li>
+<li>location.port: "80"，请求的端口，如果URL中没有端口返回空字符串</li>
+<li>location.portocol: 'http:'，页面使用协议，一般是"http:"或"https:"</li>
+<li>location.search: "?q=javascript"，URL的查询字符串，以问号开头</li>
+<li>location.username: 'ouser'，域名前指定的用户名</li>
+<li>location.password: 'barpassword'，域名前指定的密码</li>
+<li>location.origin: '<a href="http://www.wrox.com&#x27;%EF%BC%8CURL%E7%9A%84%E6%BA%90%E5%9C%B0%E5%9D%80%EF%BC%8C%E5%8F%AA%E8%AF%BB">http://www.wrox.com'，URL的源地址，只读</a></li>
+</ul>
+</li>
+<li>
+<p>URL中的多数信息都能通过以上方法获取，search中的查询字符串就需要我们单独处理了</p>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/locationAndNavigator/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div></div><div class="paganation-module--paganation--2bE_X"><a class="paganation-module--hide--wBlxP" href="/blog/-1">« Prev</a><a class="paganation-module--pageNumber--RUHS6 paganation-module--current--39YZ4" href="/blog/">1</a><a class="paganation-module--pageNumber--RUHS6 " href="/blog/2">2</a><a class="paganation-module--pageNumber--RUHS6 " href="/blog/3">3</a><a class="paganation-module--pageNumber--RUHS6 " href="/blog/4">4</a><a class="paganation-module--pageNumber--RUHS6 " href="/blog/5">5</a><a class="paganation-module--pageNumber--RUHS6 " href="/blog/6">6</a><a class="paganation-module--extend--2q4Qk" href="/blog/1">Next »</a></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-86eae43148bf2d393162.js"],"app":["/app-03a564126170dae91f0b.js"],"component---src-pages-404-js":["/component---src-pages-404-js-52d225bf1fd405f33e03.js"],"component---src-pages-all-file-js":["/component---src-pages-all-file-js-8a4e9b634903be2f7e84.js"],"component---src-pages-index-js":["/component---src-pages-index-js-2ae84adc87fbf451f4b1.js"],"component---src-templates-blog-small-jsx":["/component---src-templates-blog-small-jsx-7847ba26c250224f083e.js"],"component---src-templates-category-jsx":["/component---src-templates-category-jsx-59463967dee71859a4f9.js"],"component---src-templates-index-jsx":["/component---src-templates-index-jsx-1afb50278c9b0fcb6759.js"],"component---src-templates-tag-jsx":["/component---src-templates-tag-jsx-428646eb6a5d437de98d.js"]};/*]]>*/</script><script src="/polyfill-86eae43148bf2d393162.js" nomodule=""></script><script src="/webpack-runtime-c691ad7dc71c44256655.js" async=""></script><script src="/app-03a564126170dae91f0b.js" async=""></script><script src="/framework-31fa3cffff5950ebff26.js" async=""></script><script src="/83d6cd58f512da6a6ea6dd96bfbf09511419d80b-744605ee7713f03b785c.js" async=""></script><script src="/component---src-pages-index-js-2ae84adc87fbf451f4b1.js" async=""></script><script src="/styles-89fd2ae28bdf06750a71.js" async=""></script></body></html>
