@@ -46,7 +46,136 @@ let strongs = document.querySelectorAll('p strong')
 <ul>
 <li>
 <p>返回的NodeList可以通过for-of循环，item()方法或中括号取得个别元素</p>
-</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/DOM_API/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/react_md_6/"><h1 class="article-title left">从零搭建一个react-hooks项目（六）</h1></a><div class="article-entry"><h1>从零搭建一个react-hooks项目（六）</h1>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/DOM_API/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/dom2-dom3/"><h1 class="article-title left">DOM2跟DOM3-命名空间及元素属性</h1></a><div class="article-entry"><h1>DOM2跟DOM3-命名空间及元素属性</h1>
+<ul>
+<li>
+<p>DOM1定义了HTML与XML文档的底层结构。DOM2跟DOM3在结构之上加了交互能力，提供了更高级的XML特性。DOM2跟DOM3按照模块化来制定标准，模块间有关联。模式如下</p>
+<ul>
+<li>DOM Core: 在DOM1核心基础上为节点增加属性和方法</li>
+<li>DOM Views: 定义基于样式的不同视图</li>
+<li>DOM EEvents: 定义通过事件实现DOM文档交互</li>
+<li>DOM Style: 定义以编程方式访问与修改CSS样式</li>
+<li>DOM Traversal And Range: 新增遍历DOM文档及选择文档内容的接口</li>
+<li>DOM HTML: 在DOM1HTML部分基础上，增加属性、方法和接口</li>
+<li>DOM Mutation Observers: 定义基于DOM变化触发回调的接口。这个模块是DOM4级模块，用于取代Mutation Events</li>
+</ul>
+</li>
+<li>DOM2跟DOM3 COre模块目的是拓展DOM API，满足XML的需求并提供更好的错误处理和特性检测。</li>
+</ul>
+<h2>XML命名空间</h2>
+<ul>
+<li>XML空间文档可以实现在一个格式规范的文档中混用不同的XML语言，而不必担心元素命名冲突。严格说XML命名空间在XHTML中才支持，HTML不支持，所以需要使用XHTML做势力</li>
+<li>
+<p>命名空间是使用xmlns指定的。XHTML的命名空间是"<a href="http://www.w3.org/1999/xhtml%22%EF%BC%8C%E5%BA%94%E8%AF%A5%E5%8C%85%E5%90%AB%E5%9C%A8%E4%BB%BB%E4%BD%95%E6%A0%BC%E5%BC%8F%E8%A7%84%E8%8C%83%E7%9A%84XHTML%E9%A1%B5%E9%9D%A2%E7%9A%84">http://www.w3.org/1999/xhtml"，应该包含在任何格式规范的XHTML页面的</a><html>元素中</p>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/dom2-dom3/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/dom2-dom3-css/"><h1 class="article-title left">DOM2跟DOM3-CSS</h1></a><div class="article-entry"><h1>DOM2跟DOM3-CSS</h1>
+<ul>
+<li>支持style属性的HTML元素在JavaScript中都有一个style属性，该属性是CSSStyleDeclaration属性的实例，包含通过HTML style属性为元素设置的所有样式信息，不包含通过层叠样式机制从文档样式和外部样式中继承来的样式</li>
+<li>HTML style属性中的CSS属性在JavaScript style对象中都有对应的属性（JavaScript中会把连字符分割的单词转为驼峰）</li>
+<li>大多数属性都可以直接转换，但是float不可以，因为它在JavaScript中是保留字，所以不能用做属性名。DOM2 Style规定它为cssFloat</li>
+<li>
+<p>DOM2 Style规范在style对象上加了一些属性和方法</p>
+<ul>
+<li>cssText:包含style属性中的CSS代码</li>
+<li>length，应用给元素的css属性数量</li>
+<li>parentRule，表示CSS信息的CSSRule对象</li>
+<li>getPropertyCSSValue(propertyName)，返回包含CSS属性值propertyName值的CSSValue对象（已废弃）</li>
+<li>getPropertyPriority(propertyeName)，如果CSS属性PropertyName使用了!important则返回"important"，否则返回空字符串</li>
+<li>getPropertyValue(propertyName),返回属性propertyName的字符串值</li>
+<li>item(index)，返回索引index的CSS属性名</li>
+<li>removeProperty(propertyName)，从样式中删除CSS属性</li>
+<li>setProperty(propertyName, value, priority)，设置CSS属性propertyName值为value，priority是"important"或空字符串</li>
+</ul>
+</li>
+<li>cssText可以存取样式的CSS代码，读模式下，cssText返回style属性CSS代码在浏览器内部的表示。写模式下，给cssText赋值会重写整个style属性的值。</li>
+<li>length属性跟item()方法一起使用迭代CSS属性</li>
+</ul>
+<pre><code class="language-js">for(let i = 0; i &#x3C; myDiv.style.length; ++i){
+  console.log(myDiv.style[i]) // 取得css属性名为"background-color"而不是backgroundColor
+}
+</code></pre>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/dom2-dom3-css/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/dom2-dom3-range/"><h1 class="article-title left">DOM2跟DOM3-DOM范围</h1></a><div class="article-entry"><h1>DOM2跟DOM3-DOM范围</h1>
+<ul>
+<li>DOM2 Traversal and Range 模块定义了范围接口。范围可用于在文档中选择内容，而不用考虑节点之间的接线。</li>
+<li>DOM2 在Document类型上定义了createRange()方法，暴露在document对象上。可用此方法创建一个DOM范围对象</li>
+</ul>
+<pre><code class="language-js">let range = document.createRange()
+</code></pre>
+<ul>
+<li>这个创建的范围对象关联到创建它的文档，不能在其他文档使用。</li>
+<li>
+<p>每个范围都是Range类型的实例，拥有相应的方法与属性。</p>
+<ul>
+<li>startContainer，范围起点躲在的节点（选区中第一个子节点的父节点）</li>
+<li>startOffset，范围起点在startContainer中的偏移量。如果startContainer是文本节点、注释节点或CData节点，则startOffset指范围起点之前跳过的字符数；否则表示范围中第一个节点的索引</li>
+<li>endContainer，范围终点所在的节点（选区中最后一个子节点的父节点）</li>
+<li>endOffset，范围终点在startContainer中的偏移量</li>
+<li>commonAncestorContainer，文档中以startContainer和endContainer为后代的最深的节点</li>
+</ul>
+</li>
+<li>这些属性在范围放到文档中特定位置时获得相应的值</li>
+<li>
+<p>selectNode()与selectNodeContents()方法可用于选中文档中的某个部分，接收一个节点为参数，并将该节点信息添加到调用它的范围。selectNode选择整个节点，包括后代节点，selectNodeContents只选择节点的后代</p>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/dom2-dom3-range/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/Events/"><h1 class="article-title left">JavaScript中的事件</h1></a><div class="article-entry"><h1>JavaScript中的事件</h1>
+<ul>
+<li>JavaScript与HTML的交互是通过事件实现，事件代表文档或浏览器中某个有意义的时刻。可以使用仅在事件发生时执行的监听器（也叫处理程序）订阅事件。传统软件领域叫做“观察者模式”，能做到页面行为（JavaScript中定义）与页面展示（在HTML与CSS定义）的分离</li>
+<li>DOM2开始以符合逻辑的方式来标准化DOM事件API，目前所有现代浏览器都支持了DOM2 Events的核心部分。IE8是最后一个使用专有事件系统的主流浏览器</li>
+<li>在定义事件时有一个有趣的问题，当你点击按钮的时候，不光点击了按钮，而且点击了它的容器跟整个页面，所以为解决这个问题就有了事件流</li>
+<li>事件流描述了页面接收事件的顺序。结果就是，IE和Netscape提出了相反的事件流方案，IE支持事件冒泡，Netscape支持事件捕获流</li>
+</ul>
+<h2>事件冒泡</h2>
+<ul>
+<li>IE事件称为事件冒泡，事件被定义为从最基本的元素开始触发，然后向上传播至没那么具体的元素（文档）比如页面点击div，click触发顺序为： div -> body -> html -> document</li>
+<li>所有现代浏览器都支持事件冒泡，只是实现有点变化。IE5.5及更早会跳过html，从body直接到document，现代浏览器会一直到window对象</li>
+</ul>
+<h2>事件捕获</h2>
+<ul>
+<li>事件捕获是从最不具体的节点最先收到事件，最具体的最后收到事件。实际上就是为了在事件到达目标前拦截事件，前面的例子在事件捕获中为： document -> html -> body -> div</li>
+<li>事件捕获也得到所有现代浏览器的支持，所有浏览器都是从window开始捕获事件，而DOM2 Evenets规定的是从document开始</li>
+<li>
+<p>旧版本不支持，所以实际几乎不会使用事件捕获，建议使用事件冒泡，特殊情况下可以使用</p>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/Events/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/Events-type/"><h1 class="article-title left">JavaScript中的事件-事件类型</h1></a><div class="article-entry"><h1>JavaScript中的事件-事件类型</h1>
+<ul>
+<li>
+<p>Web浏览器定义很多事件，所发生事件类型决定了事件对象会保存什么信息，DOM3 Events定义了如下事件类型</p>
+<ul>
+<li>用户界面事件（UIEvent）: 涉及与BOM交互的通用浏览器事件</li>
+<li>焦点事件（FocusEvent）: 在元素获得和失去焦点时触发</li>
+<li>鼠标事件（MouseEvent）: 使用鼠标执行操作时触发</li>
+<li>滚轮事件（WheelEveny）: 使用鼠标滚轮或类似设备触发</li>
+<li>输入事件（InputEvent）: 向文档中输入文本时触发</li>
+<li>键盘事件（KeyboardEvent）: 使用键盘执行操作时触发</li>
+<li>合成事件（CompositionEvent）: 在使用某种IME（Input Method Editor,输入法编辑器）输入字符时触发</li>
+</ul>
+</li>
+<li>所有主流浏览器都支持DOM2 Events 跟DOM3 Events</li>
+<li>
+<p>用户界面事件或UI事件，主要有以下几种</p>
+<ul>
+<li>DOMActivate: 元素被用户通过鼠标或键盘操作激活时触发(比click或keydown)更常用，在DOM3 Events飞起，因为浏览器实现有差异</li>
+<li>load: 在window上页面加载完成后触发，在窗套（<frameset>）上所有窗格(frame)加载完成后触发，img元素上当图片加载完成后触发，在<object>上对应对象加载完成后触发</li>
+<li>unload: window上页面完全卸载后触发，窗套上所有窗格卸载后触发，object上的对应对象卸载后触发</li>
+<li>abort: 在object元素上对应的对象加载完成前被用户提前终止时触发</li>
+<li>error: window上当JavaScript报错时触发，img元素当图片无法加载时触发，object元素无法加载相应对象时触发，窗套上当一个或多个窗格无法完成加载时触发</li>
+<li>select: 文本框（input或textarea）上用户选了一个或多个字符时触发</li>
+<li>resize: window或窗格上被缩放时触发</li>
+<li>scroll: 用户滚动包含滚动条的元素时在元素上触发。body包含已加载页面的滚动条</li>
+</ul>
+</li>
+<li>除DOMActivate，这些事件在DOM2 Events被称为HTML Events</li>
+<li>load在window对象上load事件会在整个页面（所有外部资源如图片、css、js）加载完成后触发</li>
+<li>使用addEventListener添加load事件时，事件处理程序会收到一个event对象，DOM合规的浏览器中，event.target会设置为document，但在IE8之前的版本中，不会设置这个对象的srcElement属性</li>
+<li>load用于图片时，可以按照下方式动态添加图片</li>
+</ul>
+<pre><code class="language-js">window.addEventListener('load', () => {
+  let image = document.createElement('img')
+  image.addEventListener('load', (event) => {
+    console.log(event.target.src)
+  })
+  document.body.appendChild(image)
+  image.src = 'smile.jpg'
+})
+</code></pre>
+</div><div class="article-entry-bottom" data-flex="box:last"><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-more-link"><a href="/blog/Events-type/">阅读全文 &gt;&gt;</a></div></div></div></article></span></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a href="/blog/react_md_6/"><h1 class="article-title left">从零搭建一个react-hooks项目（六）</h1></a><div class="article-entry"><h1>从零搭建一个react-hooks项目（六）</h1>
 <ul>
 <li>最近项目比较忙，所以有段时间没有补充新内容了，直到github提示有人给我提了issue才抽时间补了一下这个内容</li>
 <li>之前已经完成了webpack的搭建与优化，可以完成项目的基本使用，这位热心的伙伴也是提出了一些关于eslint的建议，所以这次补充一下ESLint的引入</li>

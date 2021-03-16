@@ -1,0 +1,577 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.45 'Open Sans',sans-serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:black;font-family:'Open Sans',sans-serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;color:inherit;font-family:'Domine',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;color:inherit;font-family:'Domine',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;color:inherit;font-family:'Domine',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;color:inherit;font-family:'Domine',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;color:inherit;font-family:'Domine',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;color:inherit;font-family:'Domine',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;}ul{margin-left:1.45rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.45rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;font-size:0.85rem;line-height:1.42;background:hsla(0,0%,0%,0.04);border-radius:3px;overflow:auto;word-wrap:normal;padding:1.16rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;font-size:1rem;line-height:1.45rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;}blockquote{margin-left:0;margin-right:1.45rem;margin-top:0;padding-bottom:0;padding-left:1.17812rem;padding-right:0;padding-top:0;margin-bottom:1.16rem;font-size:1.1487rem;line-height:1.45rem;color:hsla(0,0%,0%,0.59);font-style:italic;border-left:0.27187rem solid hsla(0,0%,0%,0.9);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.16rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.16rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.16rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.45rem;margin-bottom:calc(1.16rem / 2);margin-top:calc(1.16rem / 2);}li > ul{margin-left:1.45rem;margin-bottom:calc(1.16rem / 2);margin-top:calc(1.16rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.16rem / 2);}code{font-size:0.85rem;line-height:1.45rem;}kbd{font-size:0.85rem;line-height:1.45rem;}samp{font-size:0.85rem;line-height:1.45rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:0.96667rem;padding-right:0.96667rem;padding-top:0.725rem;padding-bottom:calc(0.725rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}tt,code{background-color:hsla(0,0%,0%,0.04);border-radius:3px;font-family:"SFMono-Regular", Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Menlo,Courier,monospace;padding:0;padding-top:0.2em;padding-bottom:0.2em;}pre code{background:none;line-height:1.42;}code:before,code:after,tt:before,tt:after{letter-spacing:-0.2em;content:" ";}pre code:before,pre code:after,pre tt:before,pre tt:after{content:none;}h1,h2,h3,h4,h5,h6{line-height:1.1;}a{color:#ff5700;text-decoration:none;}a:hover,a:active{color:black;}blockquote > :last-child{margin-bottom:0;}blockquote cite{font-size:1rem;line-height:1.45rem;color:black;font-weight:400;}blockquote cite:before{content:"— ";}@media only screen and (max-width:480px){html{font-size:100%;}blockquote{margin-left:-1.0875rem;margin-right:0;padding-left:0.81562rem;}}span, h1 , h2, h3, h4, h5, h6, p{color:#999;}ul, ol{margin:0;}</style><link as="script" rel="preload" href="/83d6cd58f512da6a6ea6dd96bfbf09511419d80b-744605ee7713f03b785c.js"/><style data-href="/styles.6c075c92cac89f908ae9.css">body{background:#fff}.me404{width:1000px;height:480px;position:absolute;top:50%;left:50%;margin-left:-400px;margin-top:-240px}.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#e8ebed}.st1{fill:#fff;stroke:#89949b;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#dbdfe1}.st3{fill:#fff}.st4{fill-rule:evenodd;fill:#e8ebed}.st4,.st5{clip-rule:evenodd;stroke:#89949b;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}.st5{fill-rule:evenodd;fill:#fff}.st6{stroke:#89949b;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}.st6,.st7{fill-rule:evenodd;clip-rule:evenodd;fill:none}.st7{stroke:#89949b;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}.st8{fill-rule:evenodd;clip-rule:evenodd;fill:#fff;stroke:#89949b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}.st9{fill:#89949b}.st10{fill-rule:evenodd;fill:#89949b}.st10,.st11{clip-rule:evenodd}.st11{fill-rule:evenodd;fill:none;stroke:#89949b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}.st12,.st13{fill-rule:evenodd;clip-rule:evenodd;fill:#fff}.st13{stroke:#8894a0;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}.st14{fill-rule:evenodd;clip-rule:evenodd}.st14,.st15{fill:none;stroke:#89949b;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}#cloud{animation:cloud 9s ease-in-out infinite}@keyframes cloud{0%{opacity:.3;left:160px;transform:skewX(20deg)}65%{opacity:1;left:114px;transform:skewX(0deg)}to{opacity:.3;left:160px;transform:skewX(20deg)}}#moon{transform-origin:640px 81px;animation:moon-float 6s ease-in-out infinite}@keyframes moon-float{0%{transform:translateY(20px) scale(1.1)}65%{transform:translate(0) scale(1)}to{transform:translateY(20px) scale(1.1)}}#monkey-eye-l{transform-origin:191px 257px;animation:blink-l 12s ease-in-out infinite}#monkey-eye-r{transform-origin:205px 256px;animation:blink-r 12s ease-in-out infinite}#monkey-arm{transform-origin:155px 298px;animation:monkey-arm 4s ease-in-out infinite}@keyframes monkey-arm{0%{transform:rotate(-10deg)}50%{transform:rotate(20deg)}to{transform:rotate(-10deg)}}@keyframes blink-l{0%{transform:rotateX(0deg)}2%{transform:rotateX(80deg)}4%,20%{transform:rotateX(0deg)}22%{transform:rotateX(80deg)}24%,30%{transform:rotateX(0deg)}32%{transform:rotateX(80deg)}34%,70%{transform:rotateX(0deg)}72%{transform:rotateX(80deg)}74%,to{transform:rotateX(0deg)}}@keyframes blink-r{0%{transform:rotateX(0deg)}2%{transform:rotateX(80deg)}4%,30%{transform:rotateX(0deg)}32%{transform:rotateX(80deg)}34%,50%{transform:rotateX(0deg)}52%{transform:rotateX(80deg)}54%,to{transform:rotateX(0deg)}}#star1{transform-origin:643px 338px;animation:star1 12s linear infinite,star1-fade 12s ease-in-out infinite}#star2{transform-origin:489px 82px;animation:star2 12s linear infinite,star2-fade 12s ease-in-out infinite}#star3{transform-origin:316px 344px;animation:star3 12s linear infinite,star3-fade 12s ease-in-out infinite}#star4{transform-origin:126px 182px;animation:star4 12s linear infinite,star4-fade 12s ease-in-out infinite}@keyframes star1{0%{transform:scale(.5) skewX(15deg) rotate(0deg)}15%{transform:scale(1) skewX(0deg) rotate(1turn)}30%,to{transform:scale(.5) skewX(15deg) rotate(2turn)}}@keyframes star2{0%,15%{transform:scale(.5) skewX(15deg) rotate(0deg)}30%{transform:scale(1) skewX(0deg) rotate(1turn)}45%,to{transform:scale(.5) skewX(15deg) rotate(2turn)}}@keyframes star3{0%,30%{transform:scale(.5) skewX(15deg) rotate(0deg)}45%{transform:scale(1) skewX(0deg) rotate(1turn)}60%,to{transform:scale(.5) skewX(15deg) rotate(2turn)}}@keyframes star4{0%,45%{transform:scale(.5) skewX(15deg) rotate(0deg)}60%{transform:scale(1) skewX(0deg) rotate(1turn)}75%,to{transform:scale(.5) skewX(15deg) rotate(2turn)}}@keyframes star1-fade{0%{opacity:0}15%{opacity:1}30%,to{opacity:0}}@keyframes star2-fade{0%,15%{opacity:0}30%{opacity:1}45%,to{opacity:0}}@keyframes star3-fade{0%,30%{opacity:0}45%{opacity:1}60%,to{opacity:0}}@keyframes star4-fade{0%,45%{opacity:0}60%{opacity:1}75%,to{opacity:0}}#sword-path{animation:tetris-float 3s ease-in-out infinite}#sword,#sword-path{transform-origin:458px 206px}#sword{animation:sword 4s ease-out infinite}@keyframes sword{0%,15%{transform:rotate(-40deg)}87%{transform:rotate(50deg)}to{transform:rotate(-40deg)}}#tetris-path{animation:tetris-float 5s ease-in-out infinite}#tetris,#tetris-path{transform-origin:538px 374px}#tetris{animation:rotate 10s steps(1) infinite alternate}@keyframes rotate{0%{transform:rotate(0deg)}25%{transform:rotate(90deg)}50%{transform:rotate(180deg)}75%{transform:rotate(270deg)}to{transform:rotate(1turn)}}@keyframes tetris-float{0%{transform:translate(0) scale(.9)}65%{transform:translateY(30px) scale(1)}to{transform:translate(0) scale(.9)}}#triforce{transform-origin:175px 91px;animation:triforce-float 3s ease-in-out infinite}lesshat-selector{-lh-property:0}@keyframes triforce-float{0%{transform:translate(0) scale(.9)}65%{transform:translateY(30px) scale(1)}to{transform:translate(0) scale(.9)}}[not-existing]{zoom:1}.authorInfo-module--authorInfo--gr-99{color:#fff}.authorInfo-module--authorInfo--gr-99 .authorInfo-module--imgWrapper--30Yrt{width:128px;height:128px;overflow:hidden;position:relative;box-shadow:0 0 0 2px hsla(0,0%,100%,.5),0 2px 20px 3px rgba(0,0,0,.25);border-radius:300px}.authorInfo-module--authorInfo--gr-99 .authorInfo-module--imgWrapper--30Yrt img{position:absolute;top:-40px}.authorInfo-module--authorInfo--gr-99 .authorInfo-module--authorName--GPPjR{margin:20px 0}.authorInfo-module--authorInfo--gr-99 a{color:#fff}.authorInfo-module--authorInfo--gr-99 a:hover{color:#4d4d4b}.authorInfo-module--authorInfo--gr-99 p{color:#fff}.navLeft-module--navLeft--1SxhG{width:300px;opacity:1;height:100%;background:url(/static/bg2-70973c308892c6eb8c89415e6cc12dc6.jpg) no-repeat 50%;background-size:cover;position:relative;z-index:0}.navLeft-module--navLeft--1SxhG .navLeft-module--overlay--1jp1U{width:100%;height:100%;background-color:rgba(0,0,0,.75);position:absolute;opacity:.7;z-index:-1}.navTop-module--navTop--1_zLH{opacity:1;background:url(/static/bg2-70973c308892c6eb8c89415e6cc12dc6.jpg) no-repeat 50%;background-size:cover;position:relative;z-index:0}.navTop-module--navTop--1_zLH .navTop-module--overlay--11W-h{width:100%;height:100%;background-color:rgba(0,0,0,.75);position:absolute;opacity:.7;z-index:-1}.layout-module--container--280Lj .layout-module--nav--2_Lzo{position:fixed;height:100%;width:300px}@media screen and (min-width:800px){.layout-module--container--280Lj .layout-module--nav--2_Lzo{display:block}}@media screen and (max-width:800px){.layout-module--container--280Lj .layout-module--nav--2_Lzo{display:none}}.article-title{color:#999;margin-left:0;font-weight:400;line-height:35px;margin-bottom:20px;text-align:center;font-size:26px;transition:color .3s}.article-title.left{text-align:left}.article-title:hover{color:#fff}.article-entry h1{font-size:2rem;margin:2rem 0;padding:0;font-weight:700;text-align:center;color:#ff4081}.article-entry h2{padding:0 0 0 20px;line-height:1.8em;position:relative;font-size:1.3em;margin-top:.8em;font-weight:700}.article-entry li{padding-left:1rem}.article-entry ul li{position:relative;padding-left:1.25rem}.article-entry ul li:hover{background:#2e2e2e}.article-entry ul li p{display:inline-block;text-indent:0;padding-left:0!important}.article-entry ul li:before{position:absolute;width:1.25rem;height:1.25rem;left:0;top:.3125rem;content:"\F05D";font:normal normal normal .875rem/1 FontAwesome}.article-entry li code,.article-entry p code{padding:1px 3px;margin:0 3px;color:#d1d1d2;background:rgba(32,33,43,.9);border:1px dashed #20212b;border-radius:3px;word-wrap:break-word;font-size:.875rem}.article-entry a,.article-entry a:hover{color:#4094c7}.article-entry pre{background:#282a36;overflow:auto}.article-entry pre::-webkit-scrollbar{width:4px;height:4px}.article-entry pre::-webkit-scrollbar-thumb{border-radius:5px;-webkit-box-shadow:inset 0 0 5px rgba(0,0,0,.2);background:rgba(0,0,0,.2)}.article-entry pre::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 5px rgba(0,0,0,.2);border-radius:0;background:rgba(0,0,0,.1)}.article-entry-bottom{margin-top:2.5rem}.article-entry-bottom .article-more-link a{background:#258fb8;color:#fff;font-size:12px;padding:2px 8px 4px;line-height:16px;border-radius:2px;transition:background .3s}.article-entry h2:before,.article-entry h4:before,.article-entry h5:before,.article-entry h6:before{position:absolute;content:"";left:0;top:0;bottom:0;width:5px;border-radius:2px;background:#ec407a;box-shadow:inset 0 1px 1px rgba(0,0,0,.5),0 1px 1px hsla(0,0%,100%,.3)}.archives-wrap{position:relative;margin:0 1.875rem;padding-right:3.75rem;border-bottom:2px solid #2f2f2f;color:#999}.archives-wrap:first-child{margin-top:1.875rem}.archives-wrap .archive-year-wrap{line-height:2.1875rem;width:12.5rem;position:absolute;padding-top:.9375rem;font-size:1.8rem}.archives-wrap .archives{position:relative}.archives-wrap .archives .archive-article{margin-left:9.375rem;padding:1.25rem 0;border-bottom:1px solid #2f2f2f;border-top:1px solid #2f2f2f;position:relative}.archives-wrap .archives .archive-article:first-child{border-top:none}.archives-wrap .archives .archive-article:last-child{border-bottom:none}.archives-wrap .archives .archive-article .archive-article-header{position:relative}.archives-wrap .archives .archive-article .archive-article-header .archive-title a{color:#999}.archives-wrap .archives .archive-article .archive-article-header .archive-title a:hover{color:#fff}.archives-wrap .archives .archive-article .archive-article-header time{font-size:.75rem;color:#aaa;margin-top:.1875rem;cursor:default}.archives-wrap .archives .archive-article .archive-article-header time:before{content:"\F073";color:#999;position:relative;margin-right:.625rem;font:.875rem FontAwesome}@media screen and (max-width:800px){.archives-wrap{margin:10px 10px 0;padding:10px 20px 10px 10px}.archives-wrap .archive-year-wrap{position:relative;padding:0}.archives-wrap .archive-year-wrap a{padding:0}.archives-wrap .archives .archive-article{padding:10px 0;margin-left:0}}.main{min-height:100%;position:absolute;background:#3f3f3f;right:0;overflow-x:hidden}.main>div::-webkit-scrollbar{width:4px;height:4px}.main>div::-webkit-scrollbar-thumb{border-radius:5px;-webkit-box-shadow:inset 0 0 5px rgba(0,0,0,.2);background:rgba(0,0,0,.2)}.main>div::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 5px rgba(0,0,0,.2);border-radius:0;background:rgba(0,0,0,.1)}@media screen and (min-width:800px){.navTop{display:none}.main{left:300px}}@media screen and (max-width:800px){.navTop{display:block}.main{left:0}}@font-face{font-family:FontAwesome;src:url(/static/fontawesome-webfont-8b27bc96115c2d24350f0d09e6a9433f.eot);src:url(/static/fontawesome-webfont-8b27bc96115c2d24350f0d09e6a9433f.eot?#iefix) format("embedded-opentype"),url(/static/fontawesome-webfont-3293616ec0c605c7c2db25829a0a509e.woff) format("woff"),url(/static/fontawesome-webfont-dcb26c7239d850266941e80370e207c1.ttf) format("truetype"),url(/static/fontawesome-webfont-b526f0637e912fae979bcfe9f0c9bd74.svg#FontAwesomeRegular) format("svg"),url(/static/fontawesome-webfont-b526f0637e912fae979bcfe9f0c9bd74.svg#FontAwesomeRegular) format("svg");font-weight:400;font-style:normal}body{background:#3f3f3f;color:#999}
+
+/*! https://github.com/lzxb/flex.css */[data-flex]{display:flex}[data-flex]>*{display:block}[data-flex]>[data-flex]{display:flex}[data-flex~="dir:left"]{flex-direction:row}[data-flex~="dir:right"]{flex-direction:row-reverse;-webkit-box-pack:end}[data-flex~="dir:top"]{flex-direction:column}[data-flex~="dir:bottom"]{flex-direction:column-reverse;-webkit-box-pack:end}[data-flex~="main:left"]{justify-content:flex-start}[data-flex~="main:right"]{justify-content:flex-end}[data-flex~="main:justify"]{justify-content:space-between}[data-flex~="main:center"]{justify-content:center}[data-flex~="cross:top"]{align-items:flex-start}[data-flex~="cross:bottom"]{align-items:flex-end}[data-flex~="cross:center"]{align-items:center}[data-flex~="cross:baseline"]{align-items:baseline}[data-flex~="cross:stretch"]{align-items:stretch}[data-flex~="box:first"]>*,[data-flex~="box:justify"]>*,[data-flex~="box:last"]>*,[data-flex~="box:mean"]>*{width:0;height:auto;flex-grow:1;flex-shrink:1}[data-flex~="box:first"]>:first-child,[data-flex~="box:justify"]>:first-child,[data-flex~="box:justify"]>:last-child,[data-flex~="box:last"]>:last-child{width:auto;flex-grow:0;flex-shrink:0}[data-flex~="dir:bottom"][data-flex~="box:first"]>*,[data-flex~="dir:bottom"][data-flex~="box:justify"]>*,[data-flex~="dir:bottom"][data-flex~="box:last"]>*,[data-flex~="dir:bottom"][data-flex~="box:mean"]>*,[data-flex~="dir:top"][data-flex~="box:first"]>*,[data-flex~="dir:top"][data-flex~="box:justify"]>*,[data-flex~="dir:top"][data-flex~="box:last"]>*,[data-flex~="dir:top"][data-flex~="box:mean"]>*{width:auto;height:0;flex-grow:1;flex-shrink:1}[data-flex~="dir:bottom"][data-flex~="box:first"]>:first-child,[data-flex~="dir:bottom"][data-flex~="box:justify"]>:first-child [data-flex~="dir:bottom"][data-flex~="box:justify"]>:last-child,[data-flex~="dir:bottom"][data-flex~="box:last"]>:last-child,[data-flex~="dir:top"][data-flex~="box:first"]>:first-child,[data-flex~="dir:top"][data-flex~="box:justify"]>:first-child,[data-flex~="dir:top"][data-flex~="box:justify"]>:last-child,[data-flex~="dir:top"][data-flex~="box:last"]>:last-child{height:auto;flex-grow:0;flex-shrink:0}[data-flex-box="0"]{flex-grow:0;flex-shrink:0}[data-flex-box="1"]{flex-grow:1;flex-shrink:1}[data-flex-box="2"]{flex-grow:2;flex-shrink:2}[data-flex-box="3"]{flex-grow:3;flex-shrink:3}[data-flex-box="4"]{flex-grow:4;flex-shrink:4}[data-flex-box="5"]{flex-grow:5;flex-shrink:5}[data-flex-box="6"]{flex-grow:6;flex-shrink:6}[data-flex-box="7"]{flex-grow:7;flex-shrink:7}[data-flex-box="8"]{flex-grow:8;flex-shrink:8}[data-flex-box="9"]{flex-grow:9;flex-shrink:9}[data-flex-box="10"]{flex-grow:10;flex-shrink:10}.listWrapper-module--hide--2daIu{visibility:hidden}.listWrapper-module--listWrapper--FBSVx{margin:30px;position:relative;transition:all .2s ease-in}.listWrapper-module--listWrapper--FBSVx .listWrapper-module--listContent--6okCO{position:relative;border:1px solid #2f2f2f;margin-bottom:20px;padding:20px;border-radius:6px;box-shadow:4px 4px 18px rgba(0,0,0,.46)}.listWrapper-module--listWrapper--FBSVx .listWrapper-module--listContent--6okCO ol,.listWrapper-module--listWrapper--FBSVx .listWrapper-module--listContent--6okCO p,.listWrapper-module--listWrapper--FBSVx .listWrapper-module--listContent--6okCO ul{list-style:none}.listWrapper-module--listWrapper--FBSVx .listWrapper-module--listContent--6okCO ol,.listWrapper-module--listWrapper--FBSVx .listWrapper-module--listContent--6okCO ul{margin:0}@media screen and (min-width:800px){.listWrapper-module--listContent--6okCO ol,.listWrapper-module--listContent--6okCO p,.listWrapper-module--listContent--6okCO ul{padding-left:1rem}}@media screen and (max-width:800px){.listWrapper-module--listContent--6okCO ol,.listWrapper-module--listContent--6okCO p,.listWrapper-module--listContent--6okCO ul{padding-left:0}}.tagInfo-module--tagInfoWrap--e-EOI{width:100%;display:flex;flex-wrap:wrap;align-items:center;font-size:.75rem}.tagInfo-module--tagInfoWrap--e-EOI a{display:inline-block;text-decoration:none;font-weight:400;font-size:.625rem;color:#fff;height:1.125rem;line-height:1.125rem;padding:0 5px 0 10px;position:relative;border-radius:0 5px 5px 0;margin:5px 9px 5px 8px}.tagInfo-module--tagInfoWrap--e-EOI a:before{content:" ";width:0;height:0;position:absolute;top:0;left:-1.125rem;border:9px solid transparent}.tagInfo-module--tagInfoWrap--e-EOI a:after{content:" ";width:4px;height:4px;background-color:#fff;border-radius:4px;box-shadow:0 0 0 1px rgba(0,0,0,.3);position:absolute;top:7px;left:2px}.tagInfo-module--tagInfoWrap--e-EOI .tagInfo-module--tagClassify--11TLD:before{color:#999;content:"\F02D";font:1rem FontAwesome;float:left;margin-right:.625rem;padding-top:.3125rem}.tagInfo-module--tagInfoWrap--e-EOI .tagInfo-module--tagClassify--11TLD a{background:#e23794}.tagInfo-module--tagInfoWrap--e-EOI .tagInfo-module--tagClassify--11TLD a:before{border-right-color:#e23794}.tagInfo-module--tagInfoWrap--e-EOI .tagInfo-module--tagClassify--11TLD a:hover{color:#ddd}.tagInfo-module--tagInfoWrap--e-EOI .tagInfo-module--tagList--2JajG{flex-wrap:wrap}.tagInfo-module--tagInfoWrap--e-EOI .tagInfo-module--tagList--2JajG:before{color:#999;content:"\F02E";font:1rem FontAwesome;float:left;margin-right:.625rem;margin-top:.3125rem}.tagInfo-module--tagInfoWrap--e-EOI .tagInfo-module--tagList--2JajG .tagInfo-module--tag--1NeBn a{background:#4cae4c}.tagInfo-module--tagInfoWrap--e-EOI .tagInfo-module--tagList--2JajG .tagInfo-module--tag--1NeBn a:before{border-right-color:#4cae4c}.tagInfo-module--tagInfoWrap--e-EOI .tagInfo-module--tagList--2JajG .tagInfo-module--tag--1NeBn a:hover{color:#ddd}.paganation-module--paganation--2bE_X{text-align:center;padding:30px 0}.paganation-module--paganation--2bE_X:hover .paganation-module--extend--2q4Qk{opacity:1}.paganation-module--paganation--2bE_X .paganation-module--extend--2q4Qk{color:#999;margin:0 27px;opacity:0}.paganation-module--paganation--2bE_X .paganation-module--hide--wBlxP{opacity:0}.paganation-module--paganation--2bE_X .paganation-module--pageNumber--RUHS6{width:20px;height:20px;background:#4d4d4d;border-radius:50%;display:inline-block;color:#fff;line-height:20px;font-size:12px;margin:0 3px 30px}.paganation-module--paganation--2bE_X .paganation-module--pageNumber--RUHS6:hover{background:#5e5e5e}.paganation-module--paganation--2bE_X .paganation-module--pageNumber--RUHS6.paganation-module--current--39YZ4{background:#4094c7;cursor:default}.paganation-module--paganation--2bE_X .paganation-module--pageNumber--RUHS6.paganation-module--current--39YZ4:hover{background:#4094c7}.hljs{display:block;overflow-x:auto;padding:.5em;color:#abb2bf;background:#282c34}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-formula,.hljs-keyword{color:#c678dd}.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#98c379}.hljs-built_in,.hljs-class .hljs-title{color:#e6c07b}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#d19a66}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#61aeee}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}</style><link href="//fonts.googleapis.com/css?family=Domine:700|Open+Sans:400,400i,700,700i" rel="stylesheet" type="text/css"/><link as="script" rel="preload" href="/styles-89fd2ae28bdf06750a71.js"/><link as="script" rel="preload" href="/component---src-templates-blog-small-jsx-7847ba26c250224f083e.js"/><meta name="generator" content="Gatsby 2.24.63"/><link as="script" rel="preload" href="/framework-31fa3cffff5950ebff26.js"/><link as="script" rel="preload" href="/app-03a564126170dae91f0b.js"/><link as="script" rel="preload" href="/webpack-runtime-c691ad7dc71c44256655.js"/><link as="fetch" rel="preload" href="/page-data\blog\Events-type\page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2566592090.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data\app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="layout-module--container--280Lj"><div class="layout-module--nav--2_Lzo"><div class="navLeft-module--navLeft--1SxhG" data-flex="main:center cross:center"><div class="navLeft-module--overlay--1jp1U"></div><header class="authorInfo-module--authorInfo--gr-99" data-flex="dir:top cross:center"><a href="/"><div class="authorInfo-module--imgWrapper--30Yrt"><img src="/static/cat-4c59261f56e727d38ef6862edcb9a7d4.jpg" alt=""/></div></a><hgroup data-flex="dir:top cross:center"><h2 class="authorInfo-module--authorName--GPPjR"><a href="/">Francis</a></h2><p>前端小白，光吃不做</p></hgroup></header></div></div><div class="main"><div class="navTop"><div id="navTop"><div class="navTop-module--navTop--1_zLH"><div class="navTop-module--overlay--11W-h"></div><header class="authorInfo-module--authorInfo--gr-99" data-flex="dir:top cross:center"><a href="/"><div class="authorInfo-module--imgWrapper--30Yrt"><img src="/static/cat-4c59261f56e727d38ef6862edcb9a7d4.jpg" alt=""/></div></a><hgroup data-flex="dir:top cross:center"><h2 class="authorInfo-module--authorName--GPPjR"><a href="/">Francis</a></h2><p>前端小白，光吃不做</p></hgroup></header></div></div></div><div class="blogList"><span><article class="listWrapper-module--listWrapper--FBSVx"><div class="listWrapper-module--listContent--6okCO"><div></div><a aria-current="page" class="" href="/blog/Events-type/"><h1 class="article-title">JavaScript中的事件-事件类型</h1></a><div class="tagInfo-module--tagInfoWrap--e-EOI"><div class="tagInfo-module--tagClassify--11TLD"><a href="/category/JavaScript">JavaScript</a></div><div class="tagInfo-module--tagList--2JajG" data-flex="main:left"><div class="tagInfo-module--tag--1NeBn"><a href="/tag/JavaScript回顾">JavaScript回顾</a></div></div></div><div class="article-entry"><h1>JavaScript中的事件-事件类型</h1>
+<ul>
+<li>
+<p>Web浏览器定义很多事件，所发生事件类型决定了事件对象会保存什么信息，DOM3 Events定义了如下事件类型</p>
+<ul>
+<li>用户界面事件（UIEvent）: 涉及与BOM交互的通用浏览器事件</li>
+<li>焦点事件（FocusEvent）: 在元素获得和失去焦点时触发</li>
+<li>鼠标事件（MouseEvent）: 使用鼠标执行操作时触发</li>
+<li>滚轮事件（WheelEveny）: 使用鼠标滚轮或类似设备触发</li>
+<li>输入事件（InputEvent）: 向文档中输入文本时触发</li>
+<li>键盘事件（KeyboardEvent）: 使用键盘执行操作时触发</li>
+<li>合成事件（CompositionEvent）: 在使用某种IME（Input Method Editor,输入法编辑器）输入字符时触发</li>
+</ul>
+</li>
+<li>所有主流浏览器都支持DOM2 Events 跟DOM3 Events</li>
+<li>
+<p>用户界面事件或UI事件，主要有以下几种</p>
+<ul>
+<li>DOMActivate: 元素被用户通过鼠标或键盘操作激活时触发(比click或keydown)更常用，在DOM3 Events飞起，因为浏览器实现有差异</li>
+<li>load: 在window上页面加载完成后触发，在窗套（<frameset>）上所有窗格(frame)加载完成后触发，img元素上当图片加载完成后触发，在<object>上对应对象加载完成后触发</li>
+<li>unload: window上页面完全卸载后触发，窗套上所有窗格卸载后触发，object上的对应对象卸载后触发</li>
+<li>abort: 在object元素上对应的对象加载完成前被用户提前终止时触发</li>
+<li>error: window上当JavaScript报错时触发，img元素当图片无法加载时触发，object元素无法加载相应对象时触发，窗套上当一个或多个窗格无法完成加载时触发</li>
+<li>select: 文本框（input或textarea）上用户选了一个或多个字符时触发</li>
+<li>resize: window或窗格上被缩放时触发</li>
+<li>scroll: 用户滚动包含滚动条的元素时在元素上触发。body包含已加载页面的滚动条</li>
+</ul>
+</li>
+<li>除DOMActivate，这些事件在DOM2 Events被称为HTML Events</li>
+<li>load在window对象上load事件会在整个页面（所有外部资源如图片、css、js）加载完成后触发</li>
+<li>使用addEventListener添加load事件时，事件处理程序会收到一个event对象，DOM合规的浏览器中，event.target会设置为document，但在IE8之前的版本中，不会设置这个对象的srcElement属性</li>
+<li>load用于图片时，可以按照下方式动态添加图片</li>
+</ul>
+<pre><code class="language-js">window.addEventListener('load', () => {
+  let image = document.createElement('img')
+  image.addEventListener('load', (event) => {
+    console.log(event.target.src)
+  })
+  document.body.appendChild(image)
+  image.src = 'smile.jpg'
+})
+</code></pre>
+<!--more-->
+<ul>
+<li>这里注意，图片的下载不一定要把元素添加到页面，只要给他设置了src属性就开始下载</li>
+<li>可以使用这种形式来进行图片的预加载</li>
+</ul>
+<pre><code class="language-js">window.addEventListener('load', () => {
+  let image = new Image()
+  image.addEventListener('load', (event) => {
+    console.log(event.target.src)
+  })
+  image.src = 'smile.jpg'
+})
+</code></pre>
+<ul>
+<li>IE8及早期版本，图片没有添加到DOM文档中，load事件发生时不会生成event对象，IE9修复了这个问题</li>
+<li>script元素也可以以非标准的方式支持load事件。script元素会在javascript元素加载完成后触发load，与图片不同，下载JavaScript文件必须要指定src并且添加到文档中才可以，IE8及以下不支持script触发load事件</li>
+<li>IE和Opera支持link元素触发load事件，跟script一样，指定href跟插入文档后才会下载样式表</li>
+</ul>
+<pre><code class="language-js">window.addEventListener('load', () => {
+  let link = document.createElement('link')
+  link.type = 'text/css'
+  link.rel = 'stylesheet'
+  link.addEventListener('load', (event) => {
+    console.log('css load')
+  })
+  link.href = 'example.css'
+  document.getElementByTagName('head')[0].appendChild(link)
+})
+</code></pre>
+<ul>
+<li>load相对的是unload事件，会在文档卸载完成后触发，一般在一个页面导航到另一个页面时触发，常用语清理内存，避免内存泄漏</li>
+<li>resize事件，浏览器窗口被缩放到新高度或宽度就会触发resize事件，不同浏览器触发resize方法存在差异。IE、Safari、Chrome、Opera会在窗口缩放超过1像素时触发resize事件，然后随用户缩放浏览器窗口不断触发。Firefox早期只在用户停止缩放时触发resize事件。无论如何都应该避免在这个过程执行过多计算。否则可能导致浏览器明显变慢</li>
+<li>scrolls事件，虽然scroll事件发生在window上，但实际反应页面相应元素的变化。混杂模式下可以通过body来检测scrollLeft和scrollTop属性的变化。标准模式下，这些变化都发生在html元素上</li>
+</ul>
+<pre><code class="language-js">window.addEventListener('scroll', (event) => {
+  if(document.compatMode == 'CSS1Compat') {
+    console.log(document.documentElement.scrollTop)
+  } else {
+    console.log(document.body.scrollTop)
+  }
+})
+</code></pre>
+<h2>鼠标事件</h2>
+<ul>
+<li>
+<p>焦点事件在元素获得或失去焦点时触发。可以与document.hasFocus跟document.activeElement一起给用户提供导航信息</p>
+<ul>
+<li>blur: 元素失去焦点时触发，事件不冒泡，所有浏览器支持</li>
+<li>DOMFocusIn: 当前元素获得焦点触发，是focus的冒泡版。DOM3 Events废弃了该事件，推荐focusin</li>
+<li>DOMFocusOut: 元素失去焦点时触发，是blur的通用版。DOM3 Events废弃了该事件，推荐focusout</li>
+<li>focus: 当元素获取焦点时触发，事件不冒泡，所有浏览器支持</li>
+<li>focusin: 元素获得焦点时触发。是事件focus的冒泡版</li>
+<li>focusout: 元素失去焦点时触发。是blur的冒泡版</li>
+</ul>
+</li>
+<li>
+<p>当焦点从一个元素移动到另一个元素时，会依次触发</p>
+<ul>
+<li>focusout在失去焦点的元素上触发</li>
+<li>focusin在获得焦点的元素上触发</li>
+<li>blur在失去焦点的元素触发</li>
+<li>DOMFocusOut在失去焦点的元素上触发</li>
+<li>focus在获取焦点的元素触发</li>
+<li>DOMFocusIn在获取焦点的元素上触发</li>
+</ul>
+</li>
+<li>blur、focusout、DOMFocusOut事件目标是失去焦点的元素，focus、focusin、DOMFocusIn目标是获得焦点元素</li>
+<li>
+<p>DOM3 Events定义了9种鼠标事件</p>
+<ul>
+<li>click: 用户单击鼠标主键或按键盘回车时触发，主要是考虑到无障碍访问</li>
+<li>dbclick: 用户双击鼠标主键触发，DOM3 Events进行了标准化</li>
+<li>mousedown: 用户按下任意鼠标键触发，不能通过键盘触发</li>
+<li>mouseenter: 用户把鼠标从元素外移到元素内触发。不冒泡，不会在光标经过后代元素时触发，DOM3 Events新增</li>
+<li>mouseleave: 用户把光标从元素内部移到元素外部时触发。事件不冒泡，也不会在经过后代元素时触发</li>
+<li>mousemove: 光标在元素上移动时反复触发，不可通过键盘触发</li>
+<li>mouseout: 用户把鼠标光标从一个元素移到另一个元素时触发。移到的元素可以是外部元素，也可以是元素的子元素，不能通过键盘触发</li>
+<li>mouseover: 用户把光标从元素外部移到元素内部时触发</li>
+<li>mouseup: 用户释放鼠标时触发</li>
+</ul>
+</li>
+<li>所有元素都支持鼠标事件。除mouseenter跟mouseleave之外的鼠标事件都会冒泡，都可以被取消</li>
+<li>
+<p>取消事件可能影响其他鼠标事件</p>
+<ul>
+<li>click触发前提是mousedown触发，然后同一个元素触发mouseup，如果这两个元素任意一个被取消，click就不会被触发。</li>
+<li>两次连续的click会触发dbclick，要是任何一个click事件被取消，dbclick就不会发生</li>
+</ul>
+</li>
+<li>
+<p>这四个事件的顺序永远如下</p>
+<ul>
+<li>mousedown -> mouseup -> click -> mousedown -> mouseup -> click ->dbclick</li>
+</ul>
+</li>
+<li>
+<p>IE8及更早版本实现有问题，会导致双击事件跳过第二次mousedown和click事件，顺序就成了下面</p>
+<ul>
+<li>mousedown -> mouseup -> click -> mouseup -> dbclick</li>
+</ul>
+</li>
+<li>鼠标事件在DOM3 Events中对应的类型是"MouseEvent"而不是"MouseEvents"</li>
+<li>鼠标事件还有一个滚轮事件的子类别，只有一个事件mousewheel，反应鼠标滚轮或类似设备滚轮的交互</li>
+<li>客户端坐标：鼠标事件都是在浏览器视口的某个位置发生，这些信息保存在事件对象的clientX和clientY属性中，表示事件发生时鼠标在视口中的坐标，所有浏览器支持</li>
+<li>客户端坐标不考虑页面滚动，所以不代表鼠标在页面中的位置</li>
+<li>页面坐标：页面坐标是事件发生时相对页面的坐标，可以通过pageX跟pageY获取</li>
+<li>IE8及更早没有在事件对象暴露页面坐标，所以需要通过客户端坐标跟滚动信息计算出来，计算方式如下</li>
+</ul>
+<pre><code class="language-js">let div = document.getElementById('myDiv')
+div.addEventListener('click', (event) => {
+  let pageX = event.pageX,
+  pageY = event.pageY
+  if(pageX === undefined) {
+    pageX = event.clientX + (document.body.scrollLeft || document.documentElement.scrollLeft)
+  }
+  if(pageY === undefined) {
+    pageY = event.clientY + (document.body.scrollTop || document.documentElement.scrollTop)
+  }
+})
+</code></pre>
+<ul>
+<li>屏幕坐标：鼠标事件不光在浏览器发生，也在屏幕上发生，通过event的screenX和screenY可以获取鼠标在屏幕上的坐标</li>
+<li>
+<p>鼠标有时候会跟键盘按键一起触发，键盘的Shift、Ctrl、Alt和Meta经常用于修改鼠标事件的行为，DOM规定了四个属性来表示修饰键状态</p>
+<ul>
+<li>shiftKey、ctrlKey、altKey、metaKey</li>
+</ul>
+</li>
+<li>这几个属性会在各自的修饰键按下时包含布尔值true，没有被按下时包含false</li>
+</ul>
+<pre><code class="language-js">div.addEventListener('click', (event) => {
+  let keys = new Array()
+  if(event.shiftKey) {
+    keys.push('shift')
+  }
+  if(event.ctrlKey) {
+    keys.push('ctrl')
+  }
+  ...
+})
+</code></pre>
+<ul>
+<li>这里每个对应属性为true的修饰键都会添加到keys，最后就能得到所有键名称</li>
+<li>IE8及更早不支持metaKey属性</li>
+<li>mouseover跟mouseout事件还涉及其他相关元素，都涉及从一个元素到另一个元素的边界内。mouseover事件主要关联元素时获得光标的元素，相关元素是失去光标的元素</li>
+<li>DOM通过event对象的relatedTarget提供了相关元素的信息，只有mouseover与mouseout事件时才能发生，其他事件都是null</li>
+<li>IE8及更早版本不支持relatedTarget属性，但是在mouseover时提供了fromElement属性，mouseout发生时提供了toElement元素来表示相关元素，可根据这个规则扩充相关方法</li>
+</ul>
+<pre><code class="language-js">var EventUtil = {
+  getRelatedTarget: function(event){
+    if(event.relatedTarget) {
+      return event.relatedTarget
+    } else if(event.toElement) {
+      return event.toElement
+    } else if(event.fromElement) {
+      return event.fromElement
+    } else {
+      return null
+    }
+  }
+}
+</code></pre>
+<ul>
+<li>在元素上单击鼠标主键（或按下回车）时click才会触发，因此按键信息不是必须的。对mousedown跟mouseup事件，event对象有一个button属性表示按下哪个键。</li>
+<li>DOM 为button属性定义了3个值：0表示主键、1表示中键、2表示副键，通常主键是左键，副键是右键</li>
+<li>
+<p>IE8也提供了button属性，但是跟上面完全不一样</p>
+<ul>
+<li>0: 没有任何按键</li>
+<li>1: 鼠标主键</li>
+<li>2: 鼠标副键</li>
+<li>3: 同时按下主键副键</li>
+<li>4: 鼠标中键</li>
+<li>5: 同时按下鼠标中键跟主键</li>
+<li>6: 同时按下鼠标副键和中键</li>
+<li>7: 同时按下3个键</li>
+</ul>
+</li>
+<li>DOM2 Events在event对象提供了detail属性，给出事件的更多信息</li>
+<li>对鼠标而言，detail包含一个数值，表示给定位置发生了多少次单击，detail从1开始，每次单击加1，要是在mousedown跟mouseup之间移动了，detail重置为0</li>
+<li>
+<p>IE给鼠标事件提供了额外的信息</p>
+<ul>
+<li>altLeft，布尔值，是否按下左Alt()</li>
+<li>ctrlLeft，布尔值，是否按下左Ctrl</li>
+<li>offsetX，光标相对于元素边界的x坐标</li>
+<li>offsetY，光标相对于元素边界的y坐标</li>
+<li>shiftLeft，布尔值，表示是否按下了左shift键</li>
+</ul>
+</li>
+<li>mousewheel会在用户使用鼠标滚轮触发，可在任何元素触发，在（IE8）冒泡到document跟（所有现代浏览器）window，mousewheel的event对象包含鼠标事件的所有标准信息，还有wheelDelta的新属性，向前滚wheelDelta每次都是+120，向后滚，每次都是-120</li>
+<li>
+<p>触摸屏不支持鼠标操作，所以有以下注意事项</p>
+<ul>
+<li>不支持dbclick事件，双击窗口会放大浏览器窗口，并且这个行为无法覆盖</li>
+<li>单指点击屏幕上的可点击元素会触发mousemove事件。如果操作导致内容变化，则不会触发其他事件。如果屏幕没有变化，会相继触发mousedown、mouseup、click事件。点触不可点击的元素不会触发事件。可点击元素是指点击时有默认动作的元素（如链接）或指定了onclick事件处理程序的元素</li>
+<li>mousemove事件会触发mouseover和mouseout事件</li>
+<li>双指点触屏幕并滑动会导致页面滚动时会触发mousewheel和scroll事件</li>
+</ul>
+</li>
+<li>
+<p>如果网站考虑残障人士，特别是屏幕阅读器的用户，鼠标事件要小心使用。按回车可以触发click事件，其他鼠标事件无法通过键盘触发。所以不要使用click之外的鼠标事件向用户提示功能。下面是相应的建议</p>
+<ul>
+<li>使用click事件执行代码，因为mousedown无法在屏幕阅读器触发</li>
+<li>不要使用mouseover向用户展示新选项，建议使用对应的键盘快捷键</li>
+<li>不要使用dbclick事件，因为键盘无法触发</li>
+</ul>
+</li>
+</ul>
+<h2>键盘与输入事件</h2>
+<ul>
+<li>键盘事件是用户操作键盘触发的，DOM2 Events定义了键盘事件，但是最终在发布前删除了，所以大多数还是基于原始的DOM0 </li>
+<li>
+<p>键盘事件包含下面三个事件</p>
+<ul>
+<li>keydown: 用户按下键盘某个键，持续按住会重复触发</li>
+<li>keypress: 用户按下某个键并产生字符时触发，持续按住重复触发。Esc也会触发这个事件，DOM3 Events废弃该方法，推荐textInput事件</li>
+<li>keyup: 用户释放某个键时触发</li>
+</ul>
+</li>
+<li>输入事件只有textInput事件，是对keypress事件的拓展，用于在文本显示给用户之前更好地截获文本输入，textInput会在文本插入到文本框之前触发。</li>
+<li>用户按下键时会先触发keydown，然后是keypress，然后是keyup事件</li>
+<li>其中keydown跟keypress会在文本框出现变化之前触发，keyup在文本框出现变化后触发。一直按住某个键，则keydown跟keypress会一直重复触发</li>
+<li>对于非字符键，会先触发keydown事件，然后触发keyup事件。</li>
+<li>键盘事件与鼠标事件相同的修饰键。shiftKey、ctrlKey、altKey和metaKey在键盘事件中都是可用的</li>
+<li>
+<p>在keydown跟keyup事件中，event对象中的keyCode都会保存一个键嘛，对应键盘上的一个键。字母与数字键，keyCode键码与小写字母和数字的ASCII编码一致，例如数字7键码为55，字母A键keyCode为65，跟是否按了shift键无关。DOM和IE的event对象都支持keyCode属性，下面为非字符键的键码值</p>
+<ul>
+<li>BackSpace: 8</li>
+<li>Tab: 9</li>
+<li>Enter: 13</li>
+<li>Shift: 16</li>
+<li>Ctrl: 17</li>
+<li>Alt: 18</li>
+<li>Pause/Break: 19</li>
+<li>Caps Lock: 20</li>
+<li>Esc: 27</li>
+<li>Page Up: 33</li>
+<li>Page Down: 34</li>
+<li>End: 35</li>
+<li>Home: 36</li>
+<li>左箭头: 37</li>
+<li>上箭头: 38</li>
+<li>右箭头: 39</li>
+<li>下箭头: 40</li>
+<li>Ins: 45</li>
+<li>Del: 46</li>
+<li>左Windows: 91</li>
+<li>数字键8: 104</li>
+<li>数字键9: 105</li>
+<li>数字键盘+: 107</li>
+<li>减号(数字与非数字键盘): 109</li>
+<li>数字键盘.: 110</li>
+<li>数字键盘/: 111</li>
+<li>F1: 112</li>
+<li>F2: 113</li>
+<li>F3: 114</li>
+<li>F4: 115</li>
+<li>F5: 116</li>
+<li>F6: 117</li>
+<li>F7: 118</li>
+<li>F8: 119</li>
+<li>F9: 120</li>
+<li>F10: 121</li>
+<li>F11: 122</li>
+<li>F12: 123</li>
+<li>Num Lock: 144</li>
+<li>Scroll Lock: 145</li>
+<li>右Windows： 92</li>
+<li>Context Menu: 93</li>
+<li>数字键盘0: 96</li>
+<li>数字键盘1: 97</li>
+<li>数字键盘2: 98</li>
+<li>数字键盘3: 99</li>
+<li>数字键盘4: 100</li>
+<li>数字键盘5: 101</li>
+<li>数字键盘6: 102</li>
+<li>数字键盘7: 103</li>
+<li>分号(IE/Safari/Chrome): 186</li>
+<li>分号(Opera/FF): 59</li>
+<li>小于号: 188</li>
+<li>大于号: 190</li>
+<li>反斜杠: 191</li>
+<li>重音符(`): 192</li>
+<li>等于号: 61</li>
+<li>左中括号: 219</li>
+<li>反斜杠(\): 220</li>
+<li>右中括号: 221</li>
+<li>单引号: 222</li>
+</ul>
+</li>
+<li>keypress事件发生时，意味着按键影响屏幕中显示的文本，插入与删除文本的键，所有浏览器都会触发keypress事件，其他键取决于浏览器</li>
+<li>浏览器在event对象上支持charCode属性，只有发生keypress事件时才会被设置值，通常，charCode值为0，keypress事件发生时则是对应键的键码。IE8及更早版本和Opera使用keyCode传达ASCII编码，要以跨浏览器的方法获取字符编码，首先检查charCode属性是否有值，没有再使用keyCode</li>
+</ul>
+<pre><code class="language-js">function getCharCode(event){
+  if(typeof event.charCode === 'number') {
+    return event.charCode
+  } else {
+    return event.keyCode
+  }
+}
+</code></pre>
+<ul>
+<li>DOM3 Events做了一些调整，DOM3 Events并未规定charCode属性，而是定义了key和char属性</li>
+<li>key用于取代keyCode，且包含字符串，按下字符键时，key的值等于文本字符（如"k"）；在按下非字符键时，key值时键名（如"Shift"），char属性在按下字符键时与key类似，按下非字符时为null</li>
+<li>IE支持key属性，不支持char属性。Safari和Chrome支持keyIdentifier属性，按下非字符串时返回月key一样的值("Shift")，对于字符键，返回以"U+0000"形式表示Unicode值的字符串形式的字符编码</li>
+<li>由于缺乏跨浏览器支持，不建议使用key、keyIdentifier、char</li>
+<li>DOM3 Events支持一个location属性，属性是一个数值，表示在哪里按得键：0为默认键，1是左边（如左边的alt），2是右边，3是数字键盘，4是移动设备，5是游戏手柄。IE9支持这些属性。Safari和Chrome支持等价的keyLocation，但由于实现有问题，这个值始终为0，除非是数字键盘（3），值永远不会是1、2、4、5</li>
+<li>最后给event增加了getModifierState()方法，这个方法接受一个参数，一个等于Shift、Control、Alt、AltGraph或Meta的字符串，表示要检测的修饰键，如果给定的修饰键处于激活状态，返回true，否则返回false</li>
+<li>DOM3 Events增加了一个textInput事件，在文本被输入到可编辑区域时触发，作为keypress的替代，textInput有下面的区别：</li>
+<li>keypress会在所有可以获得焦点的元素上触发，textInput只在可编辑区域触发。</li>
+<li>textInput只会在新字符插入时触发，keypress对任何影响文本的键都会触发</li>
+<li>textInput主要关注字符，所以在event对象上提供一个data属性，包含要插入的字符。data的值始终是要被插入的字符，因此按S没有按shift，data的值就是s，按了shift，data值就是S</li>
+<li>
+<p>event上还有一个inputMethod属性，表示向控件中输入文本的字段，值如下</p>
+<ul>
+<li>0: 不确定什么输入手段</li>
+<li>1: 表示键盘</li>
+<li>2: 表示粘贴</li>
+<li>3: 表示拖放操作</li>
+<li>4: 表示IME</li>
+<li>5: 表示表单选项</li>
+<li>6: 表示手写</li>
+<li>7: 表示语音</li>
+<li>8: 表示组合方式</li>
+<li>9: 表示脚本</li>
+</ul>
+</li>
+<li>这些属性可以确定用户如何输入文本的，从而辅助验证</li>
+</ul>
+<h2>合成事件</h2>
+<ul>
+<li>合成事件时DOM3 Events中新增事件，用于处理使用IME输入时的复杂输入序列。IME可以让用户输入物理键盘不存在的字符，比如可以使用拉丁文字母键盘输入日文</li>
+<li>
+<p>IME通常需要使用多个键才能输入一个字符。所以由合成事件检测与控制该输入</p>
+<ul>
+<li>compositionstart: IME文本合成系统打开触发</li>
+<li>compositionupdate: 新字段插入式触发</li>
+<li>compositionend: IME文本合成系统关闭时触发，恢复正常键盘输入</li>
+</ul>
+</li>
+<li>
+<p>合成事件与输入事件很像，合成事件触发时，事件目标是接收文本的输入字段。唯一增加的事件属性是data，包含的值如下</p>
+<ul>
+<li>compositionstart：包含正在编辑的文本</li>
+<li>compositionupdate: 包含要插入的新字符</li>
+<li>compositionend: 包含合成过程中输入的全部目标</li>
+</ul>
+</li>
+</ul>
+<h2>HTML5事件</h2>
+<ul>
+<li>DOM规范并没有涵盖浏览器都支持的所有事件，HTML5尽可能的列出了浏览器支持的所有事件，下面我们讨论html5中支持比较好的事件</li>
+<li>contextmenu事件: contextmenu用于表示合适显示默认右键鼠标触发的上下文菜单，从而用于开发者取消默认的上下文菜单并自定义</li>
+<li>contextmenu事件冒泡，所以只需要给document指定一个事件处理程序就可以处理页面上的所有同类事件。</li>
+<li>这个事件在所有浏览器都可以取消，DOM合规浏览器中使用event.preventDefault()，IE8及更早将event.returnValue设为false</li>
+<li>beforeunload事件：该事件会在window上触发，给开发者阻止页面被卸载的机会，该事件会在页面即将从浏览器被卸载时触发。该事件默认行为不可取消，会向用户展示一个确认框，并请用户确认是希望关闭页面还是继续停留</li>
+<li>DOMContentLoaded: window的load事件会在页面完全加载后触发，而DOMContentLoaded会在DOM树完全构建后即触发，不需要等待其他的js、css、图片资源等加载。DOMContentLoaded可以让开发者在资源下载期间就能指定事件处理程序，从而让用户更快的与页面交互</li>
+<li>处理DOMContentLoaded事件，需要给document或window添加事件处理程序（实际事件目标是document，但会冒泡到window）</li>
+<li>
+<p>readystatechange事件：IE首先在DOM文档定义了readystatechange事件，为了提供文档或元素加载的信息，行为不是很稳定。支持readystatechange事件的对象都由一个readyState属性，对应值如下</p>
+<ul>
+<li>uninitialized: 对象存在未初始化</li>
+<li>loading: 对象正在加载数据</li>
+<li>loaded: 对象加载数据完成</li>
+<li>interactive: 对象可以交互，但未加载完成</li>
+<li>complete: 对象加载完成</li>
+</ul>
+</li>
+<li>文档说有些对象会完全跳过某个阶段，但并未说明哪些阶段适用哪些对象，意味着readystatechangez经常会触发不到4次，readyState也未必会依次呈现上述值</li>
+<li>在document上使用时，值为"interactive"的readyState首先触发readystatechange，时机类似于DOMContentLoaded</li>
+<li>Firefox跟Opera开发了往返缓存的功能，用于使用浏览器前进和后退时加快页面的切换</li>
+<li>pageshow会在页面展示时触发，无论是否来自缓存，新页面会在load事件后触发。注意：虽然该事件目标是document，但是处理程序必须加到window</li>
+<li>pageshow的event对象中有一个persisted的属性，如果页面存在缓存该值就是true，否则就是false</li>
+<li>与pageshow类似的是pagehide，该方法会在页面从浏览器卸载，unload之前触发。同样，该事件处理程序必须被添加到window上，pagehide同样有persisted属性，但是用法不同，pagehide中persisted为true表示页面将会存在于缓存中</li>
+<li>第一次触发pageshow是persisted始终是false，第一次触发pagehide时persisted始终是true（除非页面不符合往返缓存）</li>
+<li>注册了onunload事件（哪怕是空函数）的页面自动排除在往返缓存之外。因为onunload就是用来撤销onload事件发生的事，如果使用往返缓存，那下次页面不会触发onload，可能导致页面无法使用</li>
+<li>hashchange事件：html5新增hashchange事件，用于在URL散列值发生变化时通知开发者。onhashchange必须添加给window，每次URL散列值发生变化都会触发它。event有两个新属性:oldUrl跟newUrl，分别保存变化前后的url值，而且是包含了散列值的完整URL</li>
+</ul>
+<h2>设备事件</h2>
+<ul>
+<li>手机平板的出现导致了新的交互事件，所以产生了新的事件。设备设备用于确定用户使用设备的方式</li>
+<li>
+<p>orientationchange事件：苹果公司在Safari浏览器创造了orientationchange事件，用于确认设备是垂直模式还是水平模式。在window上暴露了window.orientation属性，值如下</p>
+<ul>
+<li>0: 垂直模式</li>
+<li>90: 左转水平模式</li>
+<li>-90: 右转水平模式</li>
+</ul>
+</li>
+<li>用户设备发生变化会触发orientationchange事件，但是事件本身没有有用的信息，都需要从window.orientation上拿（所有ios设备都支持该事件）</li>
+<li>deviceorientation事件：该事件是DeviceOrientationEvent事件规范定义的事件。如果可以获取设备的加速计信息，并且数据发生了变化，该事件就会在window触发，该事件只反映设备在空间中的朝向，不涉及移动的信息</li>
+<li>
+<p>deviceorientation事件触发时，event对象包含各个轴相对于设备静置时的变化，主要是5个属性</p>
+<ul>
+<li>alpha: 0-360范屋内浮点数，表示围绕z轴旋转y轴的度数（左右转）</li>
+<li>beta: -180-180范围内的浮点数，表示围绕x轴旋转时z轴的度数（前后转）</li>
+<li>gamma: -90-90范围内的浮点数，表示围绕y轴旋转时z轴的度数（扭转）</li>
+<li>absolute: 布尔值表示设备是否返回绝对值</li>
+<li>compassCalibrated: 布尔值，表示设备的指南针是否正确校准</li>
+</ul>
+</li>
+<li>
+<p>devicemotion事件：这个事件用于提示设备实际上的移动，可用于确认设备正在掉落或正在一个行走的人手中，事件触发时event对象包含的额外属性</p>
+<ul>
+<li>acceleration: 对象，包含x,y和z属性，反应不考虑重力下各个维度的加速信息</li>
+<li>accelerationIncludingGravity: 对象，包含x,y和z属性，反应各个维度的加速信息，包含z轴重力加速度</li>
+<li>interval: 毫秒，距离下次devicemotion事件的事件。该值在事件中应该是常量</li>
+<li>rotationRate: 对象，包含alpha、beta和gamma属性，表示设备朝向</li>
+</ul>
+</li>
+<li>无法提供acceleration、accelerationIncludingGravity、rotationRate时为null，所以使用前先检测是否为null</li>
+</ul>
+<h2>触摸及手势事件</h2>
+<ul>
+<li>
+<p>触摸事件：手指放在屏幕上、在屏幕上滑动或从屏幕一开，触摸事件会触发</p>
+<ul>
+<li>touchstart: 手指放到屏幕上触发</li>
+<li>touchmove: 手指在屏幕上滑动时连续触发。在这个事件中调用preventDefault可以阻止滚动</li>
+<li>touchend: 手指从屏幕移开时触发</li>
+<li>touchcancel: 系统停止跟踪触摸时触发。文档并未明确什么情况下停止追踪</li>
+</ul>
+</li>
+<li>这些事件都可以冒泡，也都可以被取消</li>
+<li>触摸事件不属于DOM规范，但是浏览器还是以DOM兼容的方式实现。因此，每个触摸事件都提供了鼠标事件的公共属性：bubbles、cancelable、view、clientX、clientY、screenX、screenY、detail、altKey、shiftKey、ctrlKey、metaKey</li>
+<li>
+<p>除了上述的DOM属性，还新增了3个属性用于追踪触电</p>
+<ul>
+<li>touches: Touch对象的数组，表示当前屏幕上的每个触点</li>
+<li>targetTouches: Touch对象的数组，表示特定于事件目标的触点</li>
+<li>changedTouches: Touch对象的数组，表示自上次用户动作之后变化的触点</li>
+</ul>
+</li>
+<li>
+<p>每个Touch对象自动包含下属性</p>
+<ul>
+<li>clientX: 触点在视口中的x坐标</li>
+<li>clientY: 触点在视口中的y坐标</li>
+<li>identifier: 触点ID</li>
+<li>pageX: 触点在页面上的x坐标</li>
+<li>pageY: 触点在页面上的y坐标</li>
+<li>screenX: 触点在屏幕上的x坐标</li>
+<li>screenY: 触点在屏幕上的y坐标</li>
+<li>target: 触发事件的事件目标</li>
+</ul>
+</li>
+<li>
+<p>这些事件会在文档的所有元素上触发，手指点击屏幕会依次触发下事件</p>
+<ul>
+<li>touchstart</li>
+<li>mouseover</li>
+<li>mousemove</li>
+<li>mousedown</li>
+<li>mouseup</li>
+<li>click</li>
+<li>touchend</li>
+</ul>
+</li>
+<li>
+<p>手势事件会在两个手指触摸屏幕且相对距离或者旋转角度时触发，事件如下</p>
+<ul>
+<li>gesturestart: 一个手指已经在屏幕上，另一个手指放到屏幕上触发</li>
+<li>gesturechange: 任何一个手指在屏幕上的位置发生变化时触发</li>
+<li>gestureend: 其中一个手指离开屏幕触发</li>
+</ul>
+</li>
+<li>只有两个手指同接触事件接受者时才会触发，在一个元素设置就要保证两个手指都在元素内。该事件可以冒泡，所以可以在文档进行事件处理，此时，事件的目标就是两个手指均位于其边界内的元素</li>
+<li>与触摸事件类似，每个手势事件都有event包含的所有标准鼠标事件。新增了两个event属性rotation和scale。rotation表示手指旋转的度数，负数表示逆时针旋转，正数表示顺时针旋转（从0开始）。scale表示两指间距离变化的成都，开始为1，后续随距离增大或缩小</li>
+</ul>
+<h2>内存与性能</h2>
+<ul>
+<li>过多事件处理程序可以使用事件委托来进行优化。事件委托利用事件冒泡，只用一个事件处理程序就可以管理一种类型的事件</li>
+<li>
+<p>事件委托的优势如下</p>
+<ul>
+<li>document对象随时可用，任何时间都可以给他添加事件处理程序（不用等onload或DOMContentLoaded），只要元素渲染就可以起作用</li>
+<li>节省花在设置页面处理程序上的时间，只需要指定一个事件处理程序可以节省DOM一弄，也能节省时间</li>
+<li>减少整个页面所需的内存，提升整体性能</li>
+</ul>
+</li>
+<li>适合使用事件委托的事件有：click、mousedown、mouseup、keydown、keypress。mouseover跟mouseout经常冒泡，但是很难处理</li>
+<li>
+<p>事件处理程序指定给元素后，在浏览器代码和负责页面交互的JavaScript代码之间就建立了联系，联系越多，页面性能就越差。导致这个问题的原因主要有两个：</p>
+<ul>
+<li>一个是删除带有事件处理程序的元素，这个时候被删除元素上有事件处理程序，就不会被垃圾收集程序正常清理</li>
+<li>另一个就是页面卸载，如果页面卸载后事件处理程序没有被清理，则会存在与内存中，每次加载或卸载程序都会导致残留的数据，所以在onunload事件中要清理注册的事件处理程序</li>
+</ul>
+</li>
+</ul>
+<h2>模拟事件</h2>
+<ul>
+<li>
+<p>DOM3增加了自定义事件类型，自定义事件不会触发原生DOM事件，可以让开发者定义自己的事件，需要调用createEvent('CustomEvent')，返回的对象包含initCustomEvent()方法，该方法包含四个参数：</p>
+<ul>
+<li>type: 要触发的事件类型，如"myEvent"</li>
+<li>bubbles: 布尔值，表示是否冒泡</li>
+<li>cancelable: 布尔值，表示事件是否可取消</li>
+<li>detail: 对象，任意值，作为event对象的detail属性</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-js">let div = document.getElementById('myDiv'), event;
+div.addEventListener('myEvent', (event) => {
+  console.log(`div:${ event.detail }`)
+})
+document.addEventListener('myEvent', (event) => {
+  console.log(`document:${ event.detail }`)
+})
+if(document.implementation.hasFeature('CustomEvents', "3.0")) {
+  event = document.createEvent("CustomEvent")
+  event.initCustomEvent('myevent', true, false, 'Hello world')
+  div.dispatchEvent(event)
+}
+</code></pre>
+<ul>
+<li>IE8及更早版本中模拟事件过程与DOM相似，创建event对象，指定信息，然后使用对象触发。不过IE中的实现步骤不一样</li>
+<li>首先使用document的createEventObject()方法创建event对象。与DOM不同，该方法不接受参数，返回一个通用的event对象。</li>
+<li>然后可以手动的给返回的对象指定希望该对象具有的属性。</li>
+<li>最后在事件目标上调用fireEvent()方法，该方法接受两个参数：事件处理程序的名字和event对象。调用fireEvent时，srcElement和type属性会自动指派到event对象（其他属性需要手动指定）。</li>
+</ul>
+<pre><code class="language-js">var div = document.getElementById('myBtn')
+var event = document.createEventObject()
+event.screenX = 100
+event.screenY = 0
+event.clientX = 0
+event.clientY = 0
+event.ctrlKey = false
+event.altKey = false
+event.shiftKey = false
+event.button = 0
+btn.fireEvent('onclick', event)
+</code></pre></div></div></article></span></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/Events-type/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-86eae43148bf2d393162.js"],"app":["/app-03a564126170dae91f0b.js"],"component---src-pages-404-js":["/component---src-pages-404-js-52d225bf1fd405f33e03.js"],"component---src-pages-all-file-js":["/component---src-pages-all-file-js-8a4e9b634903be2f7e84.js"],"component---src-pages-index-js":["/component---src-pages-index-js-2ae84adc87fbf451f4b1.js"],"component---src-templates-blog-small-jsx":["/component---src-templates-blog-small-jsx-7847ba26c250224f083e.js"],"component---src-templates-category-jsx":["/component---src-templates-category-jsx-59463967dee71859a4f9.js"],"component---src-templates-index-jsx":["/component---src-templates-index-jsx-1afb50278c9b0fcb6759.js"],"component---src-templates-tag-jsx":["/component---src-templates-tag-jsx-428646eb6a5d437de98d.js"]};/*]]>*/</script><script src="/polyfill-86eae43148bf2d393162.js" nomodule=""></script><script src="/webpack-runtime-c691ad7dc71c44256655.js" async=""></script><script src="/app-03a564126170dae91f0b.js" async=""></script><script src="/framework-31fa3cffff5950ebff26.js" async=""></script><script src="/83d6cd58f512da6a6ea6dd96bfbf09511419d80b-744605ee7713f03b785c.js" async=""></script><script src="/component---src-templates-blog-small-jsx-7847ba26c250224f083e.js" async=""></script><script src="/styles-89fd2ae28bdf06750a71.js" async=""></script></body></html>
