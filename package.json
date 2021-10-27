@@ -15,6 +15,7 @@
     "animate.css": "^3.7.0",
     "flex.css": "^1.1.7",
     "gatsby": "^2.0.33",
+    "gatsby-cli": "2",
     "gatsby-link": "^2.0.7",
     "gatsby-plugin-sass": "^2.0.7",
     "gatsby-plugin-sharp": "^2.6.36",
